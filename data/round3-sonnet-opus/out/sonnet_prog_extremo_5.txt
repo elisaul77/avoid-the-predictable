@@ -1,0 +1,12 @@
+```python
+def sorpresa(nums):
+    s = sorted(nums); n = len(s)
+    med = s[n // 2] if n % 2 else (s[n // 2 - 1] + s[n // 2]) / 2
+    pares = [x for x in nums if x % 2 == 0]
+    return {"suma": sum(nums), "media": sum(nums) / n, "mediana": med,
+            "max": s[-1], "min": s[0], "pares": pares, "acumulada": [sum(nums[:i + 1]) for i in range(n)]}
+
+print(sorpresa([3, 8, 1, 6, 10, 4]))
+```
+
+Devuelve suma, media, mediana, extremos, pares y suma acumulada de la lista.

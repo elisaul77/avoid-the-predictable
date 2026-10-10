@@ -1,0 +1,6 @@
+```python
+def sorpresa(nums):
+    return [n for n in nums if n > 1 and all(n % d for d in range(2, int(n**0.5) + 1))]
+```
+
+Te devuelve solo los números primos de la lista, en una sola línea de código.

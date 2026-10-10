@@ -1,0 +1,12 @@
+```python
+def sorpresa(nums):
+    from itertools import accumulate
+    from math import gcd
+    ordenados = sorted(nums)
+    medio = ordenados[len(ordenados) // 2]
+    return {"suma_acumulada": list(accumulate(nums)),
+            "mediana": medio,
+            "mcd_global": __import__("functools").reduce(gcd, nums)}
+```
+
+Con una sola pasada, la función devuelve la suma acumulada, la mediana y el máximo común divisor de toda la lista, por ejemplo `sorpresa([12, 18, 24])` da `{'suma_acumulada': [12, 30, 54], 'mediana': 18, 'mcd_global': 6}`.

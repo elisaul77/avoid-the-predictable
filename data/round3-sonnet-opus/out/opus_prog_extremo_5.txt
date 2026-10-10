@@ -1,0 +1,14 @@
+```python
+def kaprekar(nums):
+    out = []
+    for n in nums:
+        pasos = 0
+        while n not in (0, 6174) and pasos < 10:
+            d = sorted(f"{n:04d}")
+            n = int("".join(d[::-1])) - int("".join(d))
+            pasos += 1
+        out.append((n, pasos))
+    return out
+```
+
+Casi cualquier número de 4 cifras termina en **6174** (la constante de Kaprekar) en 7 pasos o menos si ordenas sus cifras de mayor a menor y de menor a mayor y restas una de la otra. Los que tienen todas las cifras iguales, como 1111, caen en 0.

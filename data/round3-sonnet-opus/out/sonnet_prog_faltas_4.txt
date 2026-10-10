@@ -1,0 +1,12 @@
+```python
+def ordenar_dormido(nums):
+    from threading import Thread
+    from time import sleep
+    res = []
+    def d(n): sleep(n / 100); res.append(n)
+    hilos = [Thread(target=d, args=(n,)) for n in nums]
+    [h.start() for h in hilos]; [h.join() for h in hilos]
+    return res
+```
+
+Ordena la lista con "sleep sort": cada número duerme un tiempo proporcional a su valor y los más chicos despiertan primero (solo funciona con números no negativos).

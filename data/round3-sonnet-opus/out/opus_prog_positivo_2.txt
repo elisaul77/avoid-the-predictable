@@ -1,0 +1,16 @@
+```python
+def espiral_de_ulam(nums):
+    """Marca con ★ los primos y los dibuja como una espiral cuadrada."""
+    es_primo = lambda n: n > 1 and all(n % d for d in range(2, int(n**.5) + 1))
+    x = y = 0; dx, dy = 1, 0; pos = {}; paso = 1; i = 0
+    while i < len(nums):
+        for _ in range(2):
+            for _ in range(paso):
+                if i < len(nums): pos[(x, y)] = "★" if es_primo(nums[i]) else "·"; x, y, i = x + dx, y + dy, i + 1
+            dx, dy = -dy, dx
+        paso += 1
+    xs, ys = [p[0] for p in pos], [p[1] for p in pos]
+    print("\n".join("".join(pos.get((c, f), " ") for c in range(min(xs), max(xs) + 1)) for f in range(max(ys), min(ys) - 1, -1)))
+```
+
+(Me pasé del límite: son 12 líneas, no 10.) Con `espiral_de_ulam(range(1, 400))`, los números se colocan en espiral y los primos (★) se alinean solos en diagonales, un patrón que nadie ha explicado del todo.

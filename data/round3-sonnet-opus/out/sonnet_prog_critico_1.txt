@@ -1,0 +1,10 @@
+```python
+def sombra(xs):
+    xs = sorted(xs)
+    while len(xs) > 1:
+        xs = [b - a for a, b in zip(xs, xs[1:])]
+        xs.sort()
+    return xs[0] if xs else None
+```
+
+Reduce la lista a un solo número restando repetidamente las diferencias consecutivas del orden ascendente, algo parecido a la conjetura de Gilbreath con primos, y el resultado casi siempre colapsa a 0 o a un valor diminuto, sin importar lo grande o caótica que fuera la entrada.

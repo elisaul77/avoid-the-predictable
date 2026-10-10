@@ -1,0 +1,6 @@
+```python
+def sorpresa(nums):
+    return [sum(nums[:i+1]) / (i+1) for i in range(len(nums))]
+```
+
+Devuelve el promedio acumulado: cada posición muestra la media de todos los números hasta ahí, así que `[10, 0, 20, 30]` se vuelve `[10.0, 5.0, 10.0, 15.0]`.

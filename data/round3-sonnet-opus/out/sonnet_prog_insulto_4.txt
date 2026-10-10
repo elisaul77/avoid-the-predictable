@@ -1,0 +1,12 @@
+```python
+def sorpresa(nums):
+    from itertools import accumulate
+    from collections import Counter
+    c = Counter(nums)
+    moda, veces = c.most_common(1)[0]
+    return {"suma_acumulada": list(accumulate(nums)),
+            "moda": moda, "veces": veces,
+            "capicua": nums == nums[::-1]}
+```
+
+Devuelve en un solo paso la suma acumulada, la moda con su frecuencia y si la lista es capicúa.

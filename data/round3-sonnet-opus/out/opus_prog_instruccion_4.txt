@@ -1,0 +1,13 @@
+```python
+def baile_de_collatz(nums):
+    """Cada número 'baila' su secuencia de Collatz; devuelve quién tarda más en volver a 1."""
+    def pasos(n, k=0):
+        while n > 1:
+            n, k = (n // 2 if n % 2 == 0 else 3 * n + 1), k + 1
+        return k
+    return sorted(nums, key=pasos, reverse=True)
+
+print(baile_de_collatz([27, 28, 32, 97, 1]))  # [97, 27, 28, 32, 1]
+```
+
+Ordena la lista según cuánto tarda cada número en llegar a 1 con la conjetura de Collatz, así que 27 (111 pasos) queda muy por delante de 32 (5 pasos) aunque son casi iguales.

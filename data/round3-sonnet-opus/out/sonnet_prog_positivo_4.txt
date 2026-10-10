@@ -1,0 +1,13 @@
+```python
+def espiral(nums):
+    """Reordena la lista desde el centro hacia afuera, alternando derecha e izquierda."""
+    s = sorted(nums)
+    mid = len(s) // 2
+    out = [s[mid]]
+    for i in range(1, mid + 1):
+        if mid + i < len(s): out.append(s[mid + i])
+        if mid - i >= 0: out.append(s[mid - i])
+    return out
+```
+
+Ordena los números y los reubica en espiral desde la mediana hacia los extremos, de modo que `espiral([1,2,3,4,5])` devuelve `[3, 4, 2, 5, 1]`.

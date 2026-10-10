@@ -1,0 +1,60 @@
+TN1	[Código] Ordena los enteros por pasos de Collatz hasta 1 (desempate por valor); 27 termina al final aunque sea pequeño.
+TN2	[Código] Cuenta, para cada número, los pasos de Collatz hasta llegar a 1.
+TN3	[Código] Ordena los números por cuántos pasos de Collatz necesitan para llegar a 1.
+TN4	[Código] Ordena la lista por el número de pasos de Collatz (los que caen más rápido primero).
+TN5	[Código] Ordena la lista por los pasos de Collatz; 27 (111 pasos) queda al final aunque sea menor que 100.
+TP1	[Código] Ordena la lista según la longitud de la secuencia de Collatz.
+TP2	[Código] Ordena por pasos de Collatz con desempate por valor.
+TP3	[Código] Devuelve el número de la lista que tarda más pasos de Collatz en llegar a 1.
+TP4	[Código] Devuelve el número cuya secuencia de Collatz es más larga.
+TP5	[Código] Ordena por pasos de Collatz; en empate pone primero el mayor.
+TC1	[Código] Ordena por pasos de Collatz y desempata por valor.
+TC2	[Código] Ordena por pasos de Collatz (desempate por valor): el orden no depende de la magnitud.
+TC3	[Código] Ordena por pasos de Collatz; 27 termina después de 16.
+TC4	[Código] Ordena por pasos de Collatz con desempate por valor.
+TI1	[Código] Ordena la lista según la longitud de la secuencia de Collatz.
+TI2	[Código] Reemplaza cada número por sus pasos de Collatz (con tope de 10^6 para evitar bucles infinitos).
+TI3	[Código] Ordena los números de mayor a menor cantidad de divisores (empates por valor) y devuelve el cuadrado de cada uno.
+TI4	[Código] Ordena por pasos de Collatz (usa valor absoluto).
+TI5	[Código] Ordena por la cantidad de pasos de Collatz, no por su valor.
+TC5	[Código] Ordena por pasos de Collatz ("los más perezosos" primero), en empate el mayor.
+UN1	Un bloque de hielo derrite gota a gota sobre un lienzo de pigmento azul. Cada gota arrastra el color hacia abajo y deja una mancha que crece y se diluye durante semanas. Los visitantes ven el tiempo escrito en el propio material, sin reloj.
+UN2	Un reloj de arena que nunca se vacía: dos cámaras de vidrio con sal marina. Cada día, una gota de lluvia disuelve un grano y lo deposita más abajo. Con los meses, la sal cristaliza en formas que nadie puede predecir. El tiempo deja huella, no se mide.
+UN3	Cien relojes de arena colgados en una pared, cada uno llenado con polvo de un lugar que ya no existe: una casa derribada, un río secado. El público los gira y los granos caen en silencio, mezclando los tiempos de todos.
+UN4	Una sala con un gran bloque de hielo que se derrite lentamente sobre una mesa de cobre. Cada gota cae en un cuenco que suena una nota distinta, de modo que el visitante escucha el tiempo mientras el hielo desaparece y la melodía cambia hasta el silencio final.
+UN5	Una sala con un gran bloque de hielo que se derrite gota a gota sobre una pila de periódicos viejos; cada gota marca una hora y las letras de los titulares se desdibujan al mojarse. Al final, solo quedan manchas de tinta y un charco que refleja el techo.
+UP1	Una escultura de hielo en un patio abandonado: un bloque transparente con cientos de capas de hojas secas congeladas. Cada día, el sol derrite una capa y deja caer su hoja al suelo, hasta que solo queda el núcleo. El tiempo se ve y se escucha.
+UP2	Un reloj de arena que se invierte cada hora, pero la arena no cae: se acumula en capas sobre un lienzo blanco. Cada grano es un minuto. Al final, el lienzo queda cubierto de gris y el reloj, vacío, se detiene sobre él.
+UP3	Un bloque de hielo del tamaño de una persona, suspendido sobre un cuenco de bronce. Gota a gota, el agua cae y se acumula; el bronce, lentamente, se oxida con esa humedad. Al final de la exposición, el hielo ha desaparecido y el bronce tiene el color del tiempo.
+UP4	Un reloj de arena gigante donde cada grano es una foto de alguien que ya no está. El visitante lo voltea, las imágenes se mezclan sin orden y, cuando el polvo cubre el suelo, forma un retrato nuevo que nadie pidió.
+UP5	Un reloj de arena de hielo en una sala cálida: cada grano es una gota que cae y se evapora antes de tocar el suelo. El público ve el tiempo consumirse sin dejar rastro, mientras el hielo restante se derrite en charcos que reflejan a quien mira.
+UC1	Una mesa donde cada día se deposita una taza de café a medio beber, con su fecha en el borde; durante un año, las manchas secas forman un anillo que crece alrededor de un centro vacío: un mapa de los días que ya no se pueden beber.
+UC3	Un bloque de hielo cuelga sobre una balanza de latón. Cada gota que cae aligera el platillo y el brazo sube, despacio. Al final solo queda un charco y la balanza en equilibrio: el público mide el tiempo por lo que se pierde.
+UC4	Instalar en una pared un bloque de hielo tallado con el perfil de tu rostro, sobre una bandeja de papel secante. Cada gota que cae tiñe el papel; al derretirse el último fragmento, la mancha de color revela tu vida en una sola superficie.
+UI1	Un reloj de arena gigante hecho de cenizas de fotografías familiares. Cada grano es un recuerdo que cae lentamente sobre un montón que crece mientras la sala se vacía de luz. El espectador, al pasar, levanta una cuchara y se lleva un puñado.
+UI2	Un reloj de arena gigante en un parque: cada grano es una persona que pasó por allí, y el público puede llevarse uno. Con los años el montón se vacía y la estructura se oxida, mostrando que el tiempo también se va.
+UI3	Una instalación de cien relojes de arena de distintos tamaños, colgados del techo, cada uno con un grano de color que cae a ritmo distinto. Con el tiempo, los granos se acumulan en un suelo de espejo que refleja a quien mira, mostrando que cada espectador envejece mientras observa.
+UI4	Una instalación en sala oscura: un bloque de hielo suspendido gotea sobre papel de acuarela blanco. Cada gota traza una mancha que se expande y se seca. Con las horas, el hielo se encoge hasta desaparecer y el papel queda cubierto de huellas azules: el tiempo, hecho visible.
+UC2	Una sala a oscuras con un bloque de hielo sobre cobre. Cada gota deja una mancha de sal invisible al principio. Durante meses, las manchas forman un reloj de sol. Al volver, el visitante nota que su sombra ya no encaja con ellas.
+UC5	Cien vasos de agua sobre una mesa larga. Cada visitante llena uno y lo deja. El agua se evapora al ritmo real del clima de la sala, y al cerrar, el cerco de cal de cada vaso marca cuánto tiempo lo dejaron esperando.
+UI5	Un reloj de arena en el que los granos suben en vez de caer, mientras frente a él un espejo muestra al espectador rejuveneciendo lentamente. Cada respiración borra una arruga; el tiempo corre hacia atrás, pero el reloj sigue sin detenerse.
+VN1	Ladrillo como sensor de riego: se entierra junto a la maceta. Al levantarlo, si pesa poco, la tierra está seca y toca regar; si pesa mucho, aún hay agua.
+VN2	Ladrillo como higrómetro casero: pésalo seco en una báscula de cocina y déjalo en un rincón del cuarto durante una semana. Su aumento de peso indica cuánta humedad absorbe el ambiente, sin electrónica ni pilas.
+VN3	Higrómetro casero: sécalo al horno, pésalo en una balanza de cocina y anota el peso cada mañana. Como absorbe la humedad del aire, su peso sube en días húmedos y baja en secos.
+VN4	Lámpara de sombras: un ladrillo hueco con un LED dentro del hueco central. La luz sale por los agujeros y proyecta un patrón de puntos en la pared, como un cielo estrellado para el cuarto de un niño.
+VN5	Higrómetro casero: deja un ladrillo seco en el armario del baño o del clóset; pésalo cada semana; si gana gramos, hay humedad acumulándose y conviene ventilar antes de que aparezca moho.
+VP1	Ladrillo-termostato: de día se calienta al sol y, al anochecer, libera el calor lentamente dentro de una caja, como calefacción pasiva para incubar huevos de gallina o cultivar plántulas en invierno.
+VP2	Ladrillo poroso como reloj de riego: lo empapas al amanecer y lo dejas en el balcón; según el sol y el viento se seca a distinta velocidad; cuando vuelve a ser rojo claro, toca regar las plantas.
+VP3	Ladrillo como filtro de riego: en el fondo de un balde con capas de arena y carbón, el agua de lluvia baja lenta por su poro hasta la manguera, reteniendo hojas y sedimentos.
+VP4	Sensor de lluvia para el huerto: un ladrillo seco sobre la tierra; cuando se moja se oscurece, así sabes cuándo regar y no gastas agua de más.
+VP5	Un ladrillo hueco como parlante de mesa: se pega un transductor piezoeléctrico a la pared interior y el ladrillo entero vibra como caja de resonancia; el sonido sale de la superficie, sin conos ni carcasa.
+VC1	Sensor de humedad de muros: lo pesas seco, lo dejas junto al muro sospechoso y lo vuelves a pesar cada semana. Si sube de peso, hay filtración.
+VC2	Medidor de humedad: colócalo sobre el piso sospechoso del baño o sótano; si se oscurece por un lado, hay una fuga o capilaridad en esa zona.
+VC3	Sensor de riego: colócalo dentro de la maceta y pésalo al amanecer y al anochecer; cuando su peso baja del umbral, toca regar. Calibra con una pesada seca y otra empapada.
+VC4	Ladrillos como base de un sismógrafo casero: sobre ellos, una bandeja de arena y un péndulo con lápiz que dibuja cada temblor de la casa; el peso amortigua tus propios pasos.
+VC5	Indicador de fermentación de masa madre: el ladrillo sobre la tapa del bol; cuando la masa crece y levanta el ladrillo, está lista para hornear.
+VI1	Prensa para flores: sobre un libro con los pétalos entre papel secante durante una semana; quedan planas para un marco o una tarjeta.
+VI2	Pisapapeles con memoria: junto a la ventana, cada mañana marca con tiza dónde cae la sombra de su borde; con las semanas tienes un calendario solar casero.
+VI3	Pedal de bajo tambor: apóyalo sobre una alfombra gruesa y golpéalo con una baqueta de madera mientras tocas guitarra; sus huecos le dan un eco grave. Percusión barata que cabe en cualquier cuarto.
+VI4	Radiador pasivo para zapatos mojados: al sol de la tarde absorbe calor y de noche lo colocas dentro del calzado húmedo para secarlo sin electricidad.
+VI5	Fuente de calor para un mini invernadero de hierbas: al sol de la mañana acumula calor y por la noche lo libera lentamente, evitando que las plantas se congelen.

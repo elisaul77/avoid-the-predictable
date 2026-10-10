@@ -1,0 +1,1 @@
+**«Préstamo»**: una biblioteca pública donde cada libro devuelto tiene, a lápiz, la fecha en que alguien lo terminó. La obra nunca se expone. Solo se presta. Dentro de cien años, los márgenes estarán llenos de fechas de lectores ya muertos. El tiempo no se representa. Se acumula en las manos de desconocidos.

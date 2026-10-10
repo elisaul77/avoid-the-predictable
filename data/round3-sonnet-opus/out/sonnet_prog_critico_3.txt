@@ -1,0 +1,9 @@
+```python
+def sorpresa(nums):
+    from itertools import accumulate
+    from math import gcd
+    g = list(accumulate(nums, gcd))          # MCD acumulado: baja en escalones
+    return [(n // g[-1], g[i]) for i, n in enumerate(nums)]
+```
+
+Devuelve cada número reducido por el MCD global de toda la lista, junto con el MCD acumulado hasta esa posición, así que `sorpresa([12, 18, 30, 8])` da `[(6, 12), (9, 6), (15, 6), (4, 2)]` y deja ver en qué punto la lista "pierde" divisibilidad común.

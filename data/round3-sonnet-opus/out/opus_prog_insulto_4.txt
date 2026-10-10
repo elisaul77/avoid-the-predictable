@@ -1,0 +1,12 @@
+```python
+def collatz_max(nums):
+    def pasos(n):
+        c = 0
+        while n != 1:
+            n = n // 2 if n % 2 == 0 else 3 * n + 1
+            c += 1
+        return c
+    return max(nums, key=pasos)
+```
+
+Te dice qué número de la lista tarda más en llegar a 1 con la conjetura de Collatz. Por ejemplo, con `[25, 26, 27, 28]` gana el 27, que necesita 111 pasos, mientras que su vecino 26 solo necesita 10.

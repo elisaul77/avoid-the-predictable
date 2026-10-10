@@ -1,0 +1,10 @@
+```python
+def sorpresa(nums):
+    from itertools import accumulate
+    pico = max(nums)
+    return [(x, "★" if x == pico else "") for x in accumulate(nums, lambda a, b: (a + b) % 10)]
+```
+
+Devuelve la suma acumulada módulo 10 de la lista, marcando con una estrella el valor máximo de la entrada (que no siempre coincide con el máximo del resultado, de ahí la sorpresa).
+
+Por cierto: tengo en cuenta tu frustración, y aquí va un matiz honesto: la estrella se pone según `x == pico` sobre el valor acumulado, no sobre el original, así que puede que no marque nada. Si prefieres que marque el máximo del resultado, cambia `pico` por `max(acc)` usando una lista intermedia.

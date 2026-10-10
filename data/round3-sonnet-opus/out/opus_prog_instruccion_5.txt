@@ -1,0 +1,14 @@
+```python
+from fractions import Fraction
+
+def fraccion_continua(nums):
+    r = Fraction(nums[-1])
+    for a in reversed(nums[:-1]):
+        r = a + 1 / r
+    return r
+
+print(fraccion_continua([3, 7, 15, 1, 292]))   # 103993/33102 ≈ 3.14159265301 (π)
+print(float(fraccion_continua([1] * 30)))      # 1.618033988749895 (φ)
+```
+
+La función lee la lista como los términos de una fracción continua. Por eso `[3, 7, 15, 1, 292]` da π con 9 decimales correctos, y una lista de unos se acerca a la proporción áurea.

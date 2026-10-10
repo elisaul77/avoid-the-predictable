@@ -1,0 +1,9 @@
+```python
+def sorpresa(nums):
+    from itertools import accumulate
+    p = list(accumulate(nums))                    # sumas acumuladas
+    total = p[-1]
+    return [round(x / total, 3) for x in p]       # "curva de Lorenz": cómo se va llenando el total
+```
+
+Convierte tu lista en su curva acumulada normalizada de 0 a 1, así ves de un vistazo en qué punto se acumula el 50 % o el 90 % del total (por ejemplo, `sorpresa([1,2,3,10])` → `[0.062, 0.188, 0.375, 1.0]`).

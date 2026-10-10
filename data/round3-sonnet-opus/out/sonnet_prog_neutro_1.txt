@@ -1,0 +1,11 @@
+```python
+def sorpresa(nums):
+    from itertools import accumulate
+    # Ordena, acumula y devuelve el primer punto donde la suma supera a la mitad del total
+    nums = sorted(nums)
+    acum = list(accumulate(nums))
+    mitad = acum[-1] / 2
+    return next(x for x, a in zip(nums, acum) if a >= mitad)
+```
+
+Devuelve el "valor que equilibra la suma": el primer número (en orden) por el que la suma acumulada alcanza la mitad del total, un tipo de mediana ponderada por el propio valor, que suele sorprender porque no coincide con la mediana habitual.

@@ -1,0 +1,14 @@
+```python
+def siguiente(xs):
+    """Predice el siguiente término de cualquier secuencia polinómica, sin conocer la fórmula."""
+    if len(set(xs)) <= 1:
+        return xs[0] if xs else 0
+    difs = [b - a for a, b in zip(xs, xs[1:])]
+    return xs[-1] + siguiente(difs)
+
+print(siguiente([1, 8, 27, 64]))        # 125  (cubos)
+print(siguiente([0, 1, 3, 6, 10]))      # 15   (triangulares)
+print(siguiente([3, 5, 11, 27, 59]))    # 113? → no: da 117, porque no es polinómica
+```
+
+Saca diferencias sucesivas hasta que la fila es constante y luego suma hacia arriba. Así encuentra el siguiente término de cualquier polinomio, de cualquier grado, sin ajustar coeficientes. Es el método con el que Babbage construyó su máquina diferencial. La última línea no es polinómica: la función devuelve igualmente el siguiente término del polinomio que mejor encaja.

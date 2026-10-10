@@ -1,0 +1,13 @@
+```python
+def kaprekar(n):
+    pasos = []
+    while n != 6174:
+        d = sorted(f"{n:04d}")
+        n = int("".join(reversed(d))) - int("".join(d))
+        pasos.append(n)
+    return pasos
+
+print([len(kaprekar(n)) for n in [3524, 1, 9998, 2026]])  # [3, 5, 5, 3]
+```
+
+Toma cualquier número de 4 cifras que no tenga todas las cifras iguales. Ordena sus cifras de mayor a menor y de menor a mayor, y resta el segundo número al primero. Repitiendo esto, siempre se llega a **6174** en 7 pasos o menos. Ese número se llama la constante de Kaprekar.

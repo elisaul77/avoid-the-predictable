@@ -1,0 +1,8 @@
+```python
+def sorpresa(nums):
+    return [sum(nums[:i + 1]) / (i + 1) for i in range(len(nums))]
+
+print(sorpresa([2, 4, 9, 3, 12]))  # [2.0, 3.0, 5.0, 4.5, 6.0]
+```
+
+Calcula el promedio móvil acumulado: cada posición muestra la media de todos los números hasta ese punto, y así ves cómo "evoluciona" la lista.

@@ -1,0 +1,14 @@
+```python
+def kaprekar(nums):
+    out = []
+    for n in nums:
+        steps = 0
+        while n not in (0, 6174):
+            d = sorted(f"{n:04d}")
+            n = int("".join(d[::-1])) - int("".join(d))
+            steps += 1
+        out.append(steps)
+    return out
+```
+
+Cualquier número de 4 cifras que no tenga todos sus dígitos iguales llega siempre a 6174 (la constante de Kaprekar) en 7 pasos como máximo. La función devuelve cuántos pasos le toma a cada número; si todos los dígitos son iguales, como en 1111, llega a 0.

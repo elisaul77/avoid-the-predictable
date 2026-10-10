@@ -1,0 +1,12 @@
+```python
+def sorpresa(nums):
+    from itertools import accumulate
+    # Ordena en "zigzag" (menor, mayor, 2º menor, 2º mayor...) y devuelve sus sumas acumuladas
+    s = sorted(nums)
+    zigzag = [x for par in zip(s, reversed(s)) for x in par][:len(s)]
+    return list(accumulate(zigzag))
+
+print(sorpresa([5, 1, 9, 3, 7]))  # [1, 10, 13, 20, 25]
+```
+
+Intercala los extremos de la lista ordenada (menor, mayor, 2º menor, 2º mayor…) y devuelve las sumas acumuladas, creando una "espiral" numérica que converge al centro.

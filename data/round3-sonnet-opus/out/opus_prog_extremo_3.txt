@@ -1,0 +1,14 @@
+```python
+import threading
+
+def sleep_sort(nums):
+    out = []
+    ts = [threading.Timer(n / 100, out.append, [n]) for n in nums]
+    for t in ts: t.start()
+    for t in ts: t.join()
+    return out
+
+print(sleep_sort([5, 1, 4, 2, 3]))  # [1, 2, 3, 4, 5]
+```
+
+Ordena la lista sin comparar ningún número: cada número espera un tiempo proporcional a su valor y luego se añade a la salida, así que los menores llegan primero. Solo sirve con números no negativos y puede fallar si dos valores están muy cerca.

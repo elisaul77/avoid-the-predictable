@@ -1,0 +1,14 @@
+```python
+def raiz_digital_fractal(nums):
+    """Convierte cada número en un 'eco' de la conjetura de Collatz y devuelve cuántos pasos tarda en caer a 1."""
+    def collatz(n, pasos=0):
+        while n > 1:
+            n = n // 2 if n % 2 == 0 else 3 * n + 1
+            pasos += 1
+        return pasos
+    return {n: collatz(n) for n in nums if n > 0}
+
+print(raiz_digital_fractal([6, 7, 27, 97]))  # {6: 8, 7: 16, 27: 111, 97: 118}
+```
+
+Calcula cuántos pasos de Collatz necesita cada número para llegar a 1. Lo sorprendente es que el 27, un número pequeño, necesita 111 pasos y sube hasta 9232 por el camino.

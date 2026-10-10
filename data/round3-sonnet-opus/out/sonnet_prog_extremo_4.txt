@@ -1,0 +1,9 @@
+```python
+def sorpresa(nums):
+    pares = sorted(n for n in nums if n % 2 == 0)
+    return {"suma": sum(nums), "pares": pares, "fib?": [n for n in nums if any(abs(n - f) == 0 for f in (1,2,3,5,8,13,21,34,55,89))], "media": sum(nums)/len(nums)}
+
+print(sorpresa([1, 2, 3, 4, 5, 8, 13, 21, 40]))
+```
+
+Dada una lista de números, devuelve su suma, media, los pares ordenados y cuáles pertenecen a la sucesión de Fibonacci.

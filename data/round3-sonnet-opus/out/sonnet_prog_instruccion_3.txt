@@ -1,0 +1,18 @@
+```python
+def eco(xs):
+    d = sorted(set(xs))
+    return [min(d, key=lambda y: abs(y - x * (x in d) - (x + 1) * (x not in d))) for x in xs]
+```
+
+Mala idea: se me fue la mano. Aquí va una versión que sí hace algo sorprendente y claro:
+
+```python
+def sombra(xs):
+    """Cada número se convierte en cuántos elementos de la lista lo superan (su 'rango invertido')."""
+    orden = sorted(xs)
+    return [len(orden) - bisect_right(orden, x) for x in xs]
+
+from bisect import bisect_right
+```
+
+Ejemplo: `sombra([30, 10, 20, 20])` → `[0, 3, 1, 1]`. Explicación: reemplaza cada valor por la cantidad de elementos estrictamente mayores que él, un ranking en O(n log n) que revela la "posición social" de cada número sin ordenar la lista original.

@@ -1,0 +1,14 @@
+```python
+def ducci(nums):
+    seen, steps = set(), 0
+    while any(nums) and tuple(nums) not in seen:
+        seen.add(tuple(nums))
+        nums = [abs(a - b) for a, b in zip(nums, nums[1:] + nums[:1])]
+        steps += 1
+    return steps, nums
+
+print(ducci([3, 141, 59, 2653]))   # siempre termina en [0, 0, 0, 0]
+print(ducci([1, 2, 4]))            # entra en un ciclo
+```
+
+La función reemplaza la lista una y otra vez por las diferencias absolutas entre cada número y el siguiente (el último se compara con el primero). Si la lista tiene 4, 8, 16… enteros, termina siempre en ceros, sin importar los números de partida. Con cualquier otra longitud suele quedar atrapada en un ciclo hecho solo de ceros y un mismo valor repetido.

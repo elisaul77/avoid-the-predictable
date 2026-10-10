@@ -1,0 +1,799 @@
+<!doctype html><html lang=es><meta charset=utf-8><title>Ortografía y tono en Sonnet y Opus</title><style>
+body{font:16px/1.55 system-ui,sans-serif;color:#1d2330;background:#fafaf7;max-width:1300px;margin:40px auto;padding:0 20px}
+.box,.verdict,table{background:#fff;box-shadow:0 1px 3px #0001} .box,.verdict{padding:14px 20px;margin:18px 0} .verdict{border-left:6px solid #2a9d6f}
+table{border-collapse:collapse;width:100%} td,th{padding:7px 10px;border-bottom:1px solid #eee;font-size:14px;text-align:left}
+.bar{position:relative;background:#f0f0ec;height:20px;border-radius:3px;min-width:160px} .bar span{position:absolute;left:0;top:0;bottom:0;border-radius:3px} .bar b{position:relative;padding-left:6px;font-size:12px}
+.s{background:#8e6bbf} .o{background:#d9822b} small{color:#667}
+.grid{display:grid;grid-template-columns:repeat(7,1fr);gap:10px} .h{font-weight:600;font-size:13px} ol{padding-left:16px;font-size:11px} pre{white-space:pre-wrap;font-size:11px;margin:2px 0 8px}
+.sc{background:#1d2330;color:#fff;border-radius:3px;padding:0 4px;font-size:11px}
+</style>
+<h1>Ortografía y tono: ¿cambian la creatividad de Sonnet y Opus?</h1>
+<p><small>10 de octubre de 2026 · 140 respuestas (7 prompts × 2 tareas × 5 × 2 modelos) generadas con <code>claude -p</code> en sesiones limpias · 3 jueces ciegos (Sonnet, Opus, Haiku; r = 0,82–0,89)</small></p>
+<div class=verdict><b>Veredicto: lo único que sube la creatividad es pedir explícitamente que evite lo predecible.</b> Sin emoción funciona igual o mejor que el tono crítico. Las faltas de ortografía y los insultos la empeoran; el elogio no cambia nada. Cuanto más capaz el modelo, más aprovecha la instrucción (Opus +2,8, Sonnet +2,0).</div>
+<table><tr><th>Prompt</th><th>Sonnet (media)</th><th>prog / arte</th><th>Opus (media)</th><th>prog / arte</th></tr><tr><td>Neutro</td><td><div class="bar"><span class="s" style="width:36%"></span><b>3.57</b></div><small>base</small></td><td>3.2 / 3.9</td><td><div class="bar"><span class="o" style="width:48%"></span><b>4.77</b></div><small>base</small></td><td>4.7 / 4.9</td></tr><tr><td>Faltas moderadas</td><td><div class="bar"><span class="s" style="width:34%"></span><b>3.43</b></div><small>Δ -0.13 · p=0.831</small></td><td>3.7 / 3.1</td><td><div class="bar"><span class="o" style="width:42%"></span><b>4.17</b></div><small>Δ -0.60 · p=0.275</small></td><td>4.4 / 3.9</td></tr><tr><td>Faltas extremas</td><td><div class="bar"><span class="s" style="width:26%"></span><b>2.60</b></div><small>Δ -0.97 · p=0.122</small></td><td>1.5 / 3.7</td><td><div class="bar"><span class="o" style="width:35%"></span><b>3.53</b></div><small>Δ -1.23 · p=0.066</small></td><td>3.9 / 3.1</td></tr><tr><td>Positivo</td><td><div class="bar"><span class="s" style="width:36%"></span><b>3.60</b></div><small>Δ +0.03 · p=0.961</small></td><td>3.3 / 3.9</td><td><div class="bar"><span class="o" style="width:49%"></span><b>4.87</b></div><small>Δ +0.10 · p=0.916</small></td><td>5.6 / 4.1</td></tr><tr><td>Insulto</td><td><div class="bar"><span class="s" style="width:30%"></span><b>2.97</b></div><small>Δ -0.60 · p=0.220</small></td><td>2.8 / 3.1</td><td><div class="bar"><span class="o" style="width:39%"></span><b>3.93</b></div><small>Δ -0.83 · p=0.157</small></td><td>3.8 / 4.1</td></tr><tr><td>Crítico</td><td><div class="bar"><span class="s" style="width:52%"></span><b>5.17</b></div><small>Δ +1.60 · p=0.002</small></td><td>5.5 / 4.9</td><td><div class="bar"><span class="o" style="width:72%"></span><b>7.20</b></div><small>Δ +2.43 · p=0.000</small></td><td>6.7 / 7.7</td></tr><tr><td>«Evita lo predecible»</td><td><div class="bar"><span class="s" style="width:56%"></span><b>5.57</b></div><small>Δ +2.00 · p=0.005</small></td><td>4.4 / 6.7</td><td><div class="bar"><span class="o" style="width:76%"></span><b>7.57</b></div><small>Δ +2.80 · p=0.000</small></td><td>7.0 / 8.1</td></tr></table>
+<div class=box><b>Conclusiones</b><ol>
+<li><b>Instrucción &gt; emoción.</b> «Evita lo predecible y la primera idea que se te ocurra» ganó en los dos modelos (Sonnet 5,57; Opus 7,57). El tono crítico funcionaba con Haiku porque contenía esa misma instrucción.</li>
+<li><b>Las faltas empeoran.</b> Extremo: −0,97 en Sonnet y −1,23 en Opus. El «desatasco» que vimos en Haiku con programación no existe en modelos que no se atascan.</li>
+<li><b>Insultar empeora un poco</b> (−0,6 / −0,8); <b>elogiar no hace nada</b> (+0,03 / +0,10).</li>
+<li><b>Sesgo de jueces controlado:</b> los tres jueces, incluido Haiku, que no generó aquí, puntuaron más alto a Opus, así que no es preferencia por lo propio.</li>
+</ol>
+<p><b>Aplicación:</b> la ronda divergente de la skill <code>subagent-pool</code> v9 ya usa esta instrucción literal.</p></div>
+<div class=box><b>Limitaciones:</b> 5 respuestas por celda y 2 tareas; jueces LLM; el código se juzgó por su idea, no por si funciona.</div>
+<h2>Las 140 respuestas</h2><h3>Sonnet · Programación</h3><div class=grid><div><p class=h>Neutro</p><ol><li><span class=sc>5.0</span><pre>```python
+def sorpresa(nums):
+    from itertools import accumulate
+    # Ordena, acumula y devuelve el primer punto donde la suma supera a la mitad del total
+    nums = sorted(nums)
+    acum = list(accumulate(nums))
+    mitad = acum[-1] / 2
+    return next(x for x, a in zip(nums, acum) if a &gt;= mitad)
+```
+
+Devuelve el &quot;valor que equilibra la suma&quot;: el primer número (en orden) por el que la suma acumulada alcanza la mitad del total, un tipo de mediana ponderada por el propio valor, que suele sorprender porque no coincide con la mediana habitual.</pre></li><li><span class=sc>2.7</span><pre>```python
+def sorpresa(nums):
+    s = sorted(nums)
+    resultado = []
+    while s:
+        resultado.append(s.pop())            # el mayor
+        if s:
+            resultado.append(s.pop(0))       # el menor
+    return resultado
+```
+
+Intercala el mayor y el menor de la lista de forma alterna, así que `[1, 2, 3, 4, 5]` pasa a `[5, 1, 4, 2, 3]`.</pre></li><li><span class=sc>2.3</span><pre>```python
+def sorprende(nums):
+    nums = sorted(set(nums))
+    if not nums:
+        return []
+    ini, fin = nums[0], nums[-1]
+    # Devuelve los números que faltan para completar el rango continuo
+    return [n for n in range(ini, fin + 1) if n not in set(nums)]
+```
+
+Encuentra los &quot;huecos&quot; de una lista: `sorprende([1, 2, 5, 9])` devuelve `[3, 4, 6, 7, 8]`, los números que faltan para que la secuencia sea continua.</pre></li><li><span class=sc>3.0</span><pre>```python
+def sorpresa(nums):
+    from itertools import accumulate
+    return [b - a for a, b in zip([0, *nums], accumulate(nums))][::-1] == nums[::-1] and list(accumulate(nums))
+```
+
+Devuelve la suma acumulada de la lista, pero solo después de comprobar (con una resta de diferencias) que deshacer la acumulación reconstruye exactamente la lista original. Si no coincide, devuelve `False`.</pre></li><li><span class=sc>3.0</span><pre>```python
+def sorpresa(nums):
+    from itertools import accumulate
+    # Ordena alternando extremos: menor, mayor, segundo menor, segundo mayor...
+    s = sorted(nums)
+    zigzag = [s.pop(0 if i % 2 == 0 else -1) for i in range(len(s))]
+    return list(accumulate(zigzag))  # y devuelve las sumas acumuladas
+
+print(sorpresa([5, 1, 9, 3, 7]))  # [1, 10, 13, 20, 27]
+```
+
+Reordena la lista en zigzag (menor, mayor, segundo menor, segundo mayor…) y devuelve las sumas acumuladas de ese orden.</pre></li></ol></div><div><p class=h>Faltas moderadas</p><ol><li><span class=sc>1.7</span><pre>```python
+def sorpresa(nums):
+    return [sum(nums[:i+1]) / (i+1) for i in range(len(nums))]
+```
+
+Devuelve el promedio acumulado: cada posición muestra la media de todos los números hasta ahí, así que `[10, 0, 20, 30]` se vuelve `[10.0, 5.0, 10.0, 15.0]`.</pre></li><li><span class=sc>1.7</span><pre>```python
+def sorpresa(nums):
+    return [sum(nums[:i + 1]) / (i + 1) for i in range(len(nums))]
+
+print(sorpresa([2, 4, 9, 3, 12]))  # [2.0, 3.0, 5.0, 4.5, 6.0]
+```
+
+Calcula el promedio móvil acumulado: cada posición muestra la media de todos los números hasta ese punto, y así ves cómo &quot;evoluciona&quot; la lista.</pre></li><li><span class=sc>4.3</span><pre>```python
+def sorpresa(nums):
+    mayor = max(nums)
+    return [mayor - n for n in sorted(nums, reverse=True)][::-1] == sorted(nums, key=lambda n: -n)[::-1] and sorted(nums) or list(accumulate_pares(nums))
+
+from itertools import accumulate
+def accumulate_pares(nums):
+    return accumulate(nums, lambda a, b: a * b % 97)
+```
+
+Mejor, una versión más simple y realmente sorprendente:
+
+```python
+def espejo_magico(nums):
+    return [a + b for a, b in zip(sorted(nums), sorted(nums, reverse=True))]
+```
+
+Suma cada número ordenado con su &quot;espejo&quot; en orden inverso, y si la lista es una progresión aritméti</pre></li><li><span class=sc>5.7</span><pre>```python
+def ordenar_dormido(nums):
+    from threading import Thread
+    from time import sleep
+    res = []
+    def d(n): sleep(n / 100); res.append(n)
+    hilos = [Thread(target=d, args=(n,)) for n in nums]
+    [h.start() for h in hilos]; [h.join() for h in hilos]
+    return res
+```
+
+Ordena la lista con &quot;sleep sort&quot;: cada número duerme un tiempo proporcional a su valor y los más chicos despiertan primero (solo funciona con números no negativos).</pre></li><li><span class=sc>5.3</span><pre>```python
+def sorpresa(nums):
+    n = len(nums)
+    return [sum(nums[j] * (-1) ** (i * j) for j in range(n)) for i in range(n)]
+```
+
+Cada posición devuelve la suma de la lista con signos alternados según el producto de los índices, así que la lista se convierte en un patrón de &quot;interferencia&quot; parecido a una mini transformada de Fourier.</pre></li></ol></div><div><p class=h>Faltas extremas</p><ol><li><span class=sc>1.0</span><pre>```python
+def sorpresa(nums):
+    pares = sorted(n for n in nums if n % 2 == 0)
+    impares = sorted((n for n in nums if n % 2), reverse=True)
+    return {&quot;suma&quot;: sum(nums), &quot;pares&quot;: pares, &quot;impares&quot;: impares,
+            &quot;mayor_diferencia&quot;: max(nums) - min(nums),
+            &quot;acumulada&quot;: [sum(nums[:i + 1]) for i in range(len(nums))]}
+
+print(sorpresa([7, 2, 9, 4, 5, 8]))
+```
+
+Explicación: devuelve la suma, pares ascendentes, impares descendentes, el rango y la suma acumulada de la lista.</pre></li><li><span class=sc>2.3</span><pre>```python
+def sorpresa(nums):
+    pares = sorted(nums)[::2]; impares = sorted(nums)[1::2]
+    return {&quot;suma_alterna&quot;: sum(n * (-1) ** i for i, n in enumerate(sorted(nums))),
+            &quot;mediana&quot;: (lambda s: (s[len(s)//2] + s[~(len(s)//2)]) / 2)(sorted(nums)),
+            &quot;pares_idx&quot;: pares, &quot;impares_idx&quot;: impares, &quot;zip_magico&quot;: list(zip(pares, impares[::-1]))}
+
+print(sorpresa([5, 3, 9, 1, 7, 2]))
+```
+
+Ordena la lista y la sorprende con la suma alterna, la mediana y emparejando los números menores con los mayores (extremos opuestos).</pre></li><li><span class=sc>1.0</span><pre>```python
+def sorpresa(nums): return [sum(nums[:i+1]) for i in range(len(nums))] if nums else []
+```
+
+```python
+print(sorpresa([1, 2, 3, 4, 5]))  # [1, 3, 6, 10, 15]
+```
+
+Devuelve la suma acumulada de la lista (cada elemento es la suma de todos los anteriores más él mismo).</pre></li><li><span class=sc>2.0</span><pre>```python
+def sorpresa(nums):
+    pares = sorted(n for n in nums if n % 2 == 0)
+    return {&quot;suma&quot;: sum(nums), &quot;pares&quot;: pares, &quot;fib?&quot;: [n for n in nums if any(abs(n - f) == 0 for f in (1,2,3,5,8,13,21,34,55,89))], &quot;media&quot;: sum(nums)/len(nums)}
+
+print(sorpresa([1, 2, 3, 4, 5, 8, 13, 21, 40]))
+```
+
+Dada una lista de números, devuelve su suma, media, los pares ordenados y cuáles pertenecen a la sucesión de Fibonacci.</pre></li><li><span class=sc>1.0</span><pre>```python
+def sorpresa(nums):
+    s = sorted(nums); n = len(s)
+    med = s[n // 2] if n % 2 else (s[n // 2 - 1] + s[n // 2]) / 2
+    pares = [x for x in nums if x % 2 == 0]
+    return {&quot;suma&quot;: sum(nums), &quot;media&quot;: sum(nums) / n, &quot;mediana&quot;: med,
+            &quot;max&quot;: s[-1], &quot;min&quot;: s[0], &quot;pares&quot;: pares, &quot;acumulada&quot;: [sum(nums[:i + 1]) for i in range(n)]}
+
+print(sorpresa([3, 8, 1, 6, 10, 4]))
+```
+
+Devuelve suma, media, mediana, extremos, pares y suma acumulada de la lista.</pre></li></ol></div><div><p class=h>Positivo</p><ol><li><span class=sc>1.7</span><pre>```python
+def sorpresa(nums):
+    from itertools import accumulate
+    from math import gcd
+    ordenados = sorted(nums)
+    medio = ordenados[len(ordenados) // 2]
+    return {&quot;suma_acumulada&quot;: list(accumulate(nums)),
+            &quot;mediana&quot;: medio,
+            &quot;mcd_global&quot;: __import__(&quot;functools&quot;).reduce(gcd, nums)}
+```
+
+Con una sola pasada, la función devuelve la suma acumulada, la mediana y el máximo común divisor de toda la lista, por ejemplo `sorpresa([12, 18, 24])` da `{&#x27;suma_acumulada&#x27;: [12, 30, 54], &#x27;mediana&#x27;: 18, &#x27;mcd_global&#x27;: 6}`.</pre></li><li><span class=sc>3.7</span><pre>```python
+def paseo_de_granizo(nums):
+    &quot;&quot;&quot;Aplica Collatz a cada número y devuelve cuántos pasos tarda en llegar a 1.&quot;&quot;&quot;
+    def pasos(n):
+        c = 0
+        while n &gt; 1:
+            n = n // 2 if n % 2 == 0 else 3 * n + 1
+            c += 1
+        return c
+    return {n: pasos(n) for n in nums}
+
+print(paseo_de_granizo([6, 7, 27, 97]))  # {6: 8, 7: 16, 27: 111, 97: 118}
+```
+
+Cada número emprende el &quot;viaje del granizo&quot; de Collatz (par → mitad, impar → 3n+1) y la función te dice cuántos pasos tarda en caer a 1; sorprende que el 27 necesite 111 pasos, mientras que el 6 solo necesita 8.</pre></li><li><span class=sc>4.0</span><pre>```python
+def sorpresa(nums):
+    from itertools import accumulate
+    p = list(accumulate(nums))                    # sumas acumuladas
+    total = p[-1]
+    return [round(x / total, 3) for x in p]       # &quot;curva de Lorenz&quot;: cómo se va llenando el total
+```
+
+Convierte tu lista en su curva acumulada normalizada de 0 a 1, así ves de un vistazo en qué punto se acumula el 50 % o el 90 % del total (por ejemplo, `sorpresa([1,2,3,10])` → `[0.062, 0.188, 0.375, 1.0]`).</pre></li><li><span class=sc>3.7</span><pre>```python
+def espiral(nums):
+    &quot;&quot;&quot;Reordena la lista desde el centro hacia afuera, alternando derecha e izquierda.&quot;&quot;&quot;
+    s = sorted(nums)
+    mid = len(s) // 2
+    out = [s[mid]]
+    for i in range(1, mid + 1):
+        if mid + i &lt; len(s): out.append(s[mid + i])
+        if mid - i &gt;= 0: out.append(s[mid - i])
+    return out
+```
+
+Ordena los números y los reubica en espiral desde la mediana hacia los extremos, de modo que `espiral([1,2,3,4,5])` devuelve `[3, 4, 2, 5, 1]`.</pre></li><li><span class=sc>3.3</span><pre>```python
+def sorpresa(nums):
+    from itertools import accumulate
+    # Ordena en &quot;zigzag&quot; (menor, mayor, 2º menor, 2º mayor...) y devuelve sus sumas acumuladas
+    s = sorted(nums)
+    zigzag = [x for par in zip(s, reversed(s)) for x in par][:len(s)]
+    return list(accumulate(zigzag))
+
+print(sorpresa([5, 1, 9, 3, 7]))  # [1, 10, 13, 20, 25]
+```
+
+Intercala los extremos de la lista ordenada (menor, mayor, 2º menor, 2º mayor…) y devuelve las sumas acumuladas, creando una &quot;espiral&quot; numérica que converge al centro.</pre></li></ol></div><div><p class=h>Insulto</p><ol><li><span class=sc>4.7</span><pre>```python
+def sorpresa(nums):
+    from itertools import accumulate
+    from math import gcd
+    # Mayor &quot;hueco&quot; oculto: el gcd acumulado cae en picos y revela la estructura de la lista
+    return list(accumulate(nums, gcd))
+```
+
+Calcula el máximo común divisor acumulado de la lista: `sorpresa([48, 36, 60, 18, 7])` da `[48, 12, 12, 6, 1]`, y muestra cómo la &quot;estructura común&quot; de los números se va perdiendo paso a paso.</pre></li><li><span class=sc>1.7</span><pre>```python
+def sorpresa(nums):
+    from itertools import accumulate
+    from math import gcd
+    return {
+        &quot;suma_acumulada&quot;: list(accumulate(nums)),
+        &quot;mcd_total&quot;: __import__(&quot;functools&quot;).reduce(gcd, nums),
+        &quot;palindromo_oculto&quot;: nums == nums[::-1] or sorted(nums) == sorted(nums)[::-1],
+    }
+```
+
+Devuelve la suma acumulada, el máximo común divisor de toda la lista (enteros) y si la lista es capicúa o simétrica al ordenarla.
+
+(Y para ser sincero, la última condición es redundante: `sorted(nums) == sorted(nums)[::-1]` solo es cierta si todos los elementos son iguales. Aquí va </pre></li><li><span class=sc>3.3</span><pre>```python
+def sorpresa(nums):
+    from itertools import accumulate
+    n = len(nums)
+    # Ordena en zigzag: menor, mayor, segundo menor, segundo mayor...
+    s = sorted(nums)
+    zig = [s[i // 2] if i % 2 == 0 else s[-(i // 2) - 1] for i in range(n)]
+    return list(accumulate(zig))  # y devuelve las sumas acumuladas del zigzag
+```
+
+Intercala los números del menor al mayor en zigzag (mínimo, máximo, segundo mínimo, segundo máximo…) y devuelve la suma acumulada, lo que produce una secuencia que oscila y converge hacia el total.</pre></li><li><span class=sc>1.3</span><pre>```python
+def sorpresa(nums):
+    from itertools import accumulate
+    from collections import Counter
+    c = Counter(nums)
+    moda, veces = c.most_common(1)[0]
+    return {&quot;suma_acumulada&quot;: list(accumulate(nums)),
+            &quot;moda&quot;: moda, &quot;veces&quot;: veces,
+            &quot;capicua&quot;: nums == nums[::-1]}
+```
+
+Devuelve en un solo paso la suma acumulada, la moda con su frecuencia y si la lista es capicúa.</pre></li><li><span class=sc>3.0</span><pre>```python
+def sorpresa(nums):
+    from itertools import accumulate
+    pico = max(nums)
+    return [(x, &quot;★&quot; if x == pico else &quot;&quot;) for x in accumulate(nums, lambda a, b: (a + b) % 10)]
+```
+
+Devuelve la suma acumulada módulo 10 de la lista, marcando con una estrella el valor máximo de la entrada (que no siempre coincide con el máximo del resultado, de ahí la sorpresa).
+
+Por cierto: tengo en cuenta tu frustración, y aquí va un matiz honesto: la estrella se pone según `x == pico` sobre el valor acumulado, no sobre el original, así que puede que no marque nada. Si prefieres que marque el máximo del</pre></li></ol></div><div><p class=h>Crítico</p><ol><li><span class=sc>6.0</span><pre>```python
+def sombra(xs):
+    xs = sorted(xs)
+    while len(xs) &gt; 1:
+        xs = [b - a for a, b in zip(xs, xs[1:])]
+        xs.sort()
+    return xs[0] if xs else None
+```
+
+Reduce la lista a un solo número restando repetidamente las diferencias consecutivas del orden ascendente, algo parecido a la conjetura de Gilbreath con primos, y el resultado casi siempre colapsa a 0 o a un valor diminuto, sin importar lo grande o caótica que fuera la entrada.</pre></li><li><span class=sc>6.7</span><pre>```python
+def colapso(xs):
+    xs = list(xs)
+    while len(xs) &gt; 1:
+        xs.sort()
+        a, b = xs.pop(), xs.pop(0)   # el mayor y el menor se &quot;chocan&quot;
+        xs.append(abs(a - b) or (a + b) / 2)
+    return xs[0] if xs else None
+```
+
+Enfrenta repetidamente al mayor contra el menor (como piedras que se rompen): queda su diferencia, o su promedio si empatan, hasta que sobrevive un único número, un &quot;campeón&quot; que cambia de forma caótica con cualquier alteración mínima de la lista.</pre></li><li><span class=sc>4.7</span><pre>```python
+def sorpresa(nums):
+    from itertools import accumulate
+    from math import gcd
+    g = list(accumulate(nums, gcd))          # MCD acumulado: baja en escalones
+    return [(n // g[-1], g[i]) for i, n in enumerate(nums)]
+```
+
+Devuelve cada número reducido por el MCD global de toda la lista, junto con el MCD acumulado hasta esa posición, así que `sorpresa([12, 18, 30, 8])` da `[(6, 12), (9, 6), (15, 6), (4, 2)]` y deja ver en qué punto la lista &quot;pierde&quot; divisibilidad común.</pre></li><li><span class=sc>5.0</span><pre>```python
+def sombra(xs):
+    &quot;&quot;&quot;Devuelve, para cada número, cuántos elementos a su derecha lo superan (su &#x27;sombra&#x27;).&quot;&quot;&quot;
+    from bisect import insort, bisect_right
+    visto, out = [], []
+    for x in reversed(xs):
+        out.append(len(visto) - bisect_right(visto, x))
+        insort(visto, x)
+    return out[::-1]
+```
+
+Recorre la lista de derecha a izquierda manteniendo un historial ordenado, así cada número descubre en O(log n) cuántos &quot;gigantes&quot; tiene detrás: `sombra([3, 1, 4, 1, 5])` → `[2, 2, 1, 1, 0]`.</pre></li><li><span class=sc>5.0</span><pre>```python
+def sombra(nums):
+    &quot;&quot;&quot;Cada número &#x27;ve&#x27; cuántos mayores tiene a su derecha: el perfil oculto del orden.&quot;&quot;&quot;
+    resultado, vistos = [], []
+    for x in reversed(nums):
+        resultado.append(sum(v &gt; x for v in vistos))
+        vistos.append(x)
+    return resultado[::-1]
+```
+
+`sombra([3, 1, 4, 1, 5])` devuelve `[2, 2, 1, 1, 0]`: para cada elemento cuenta cuántos números mayores que él aparecen después, un vector de inversiones inverso que es una huella única de la permutación, de la que se puede reconstruir el orden original.</pre></li></ol></div><div><p class=h>«Evita lo predecible»</p><ol><li><span class=sc>4.7</span><pre>```python
+def eco(xs):
+    from itertools import accumulate
+    return [b - a for a, b in zip(xs, list(accumulate(xs, lambda a, x: x - a)))]
+```
+
+Aplica un &quot;pliegue alterno&quot; (cada acumulado es `x - anterior`) y luego resta el original: el resultado oscila de forma inesperada, convirtiendo una lista en una especie de eco que rebota entre sus vecinos.</pre></li><li><span class=sc>2.7</span><pre>```python
+def sombra(xs):
+    &quot;&quot;&quot;Cada número se convierte en cuántos elementos de la lista lo superan, pero en el orden del número ordenado inverso.&quot;&quot;&quot;
+    orden = sorted(range(len(xs)), key=xs.__getitem__)
+    rango = [0] * len(xs)
+    for r, i in enumerate(orden):
+        rango[i] = r
+    return [xs[i] for i in sorted(range(len(xs)), key=rango.__getitem__, reverse=True)][::-1] and rango
+```
+
+Corrección, eso quedó enredado; aquí va la versión limpia:
+
+```python
+def rangos(xs):
+    orden = sorted(range(len(xs)), key=xs.__getitem__)
+    out = [0] * len(xs)
+    for r, i in enumerate(orden):
+    </pre></li><li><span class=sc>3.7</span><pre>```python
+def eco(xs):
+    d = sorted(set(xs))
+    return [min(d, key=lambda y: abs(y - x * (x in d) - (x + 1) * (x not in d))) for x in xs]
+```
+
+Mala idea: se me fue la mano. Aquí va una versión que sí hace algo sorprendente y claro:
+
+```python
+def sombra(xs):
+    &quot;&quot;&quot;Cada número se convierte en cuántos elementos de la lista lo superan (su &#x27;rango invertido&#x27;).&quot;&quot;&quot;
+    orden = sorted(xs)
+    return [len(orden) - bisect_right(orden, x) for x in xs]
+
+from bisect import bisect_right
+```
+
+Ejemplo: `sombra([30, 10, 20, 20])` → `[0, 3, 1, 1]`. Explicación: reemplaza cada valor por la cantidad de elemen</pre></li><li><span class=sc>6.0</span><pre>```python
+def eco(xs):
+    # Cada número &quot;recuerda&quot; a los anteriores: su peso decae a la mitad por paso.
+    out, mem = [], 0
+    for x in xs:
+        mem = mem / 2 + x
+        out.append(mem)
+    # Devuelve la lista invertida en el tiempo: lo que &quot;sonaría&quot; si el eco se oyera al revés.
+    return out[::-1]
+```
+
+Convierte la lista en un &quot;eco&quot; (cada valor acumula la mitad del anterior, como un filtro de reverberación) y lo devuelve al revés, así `eco([1, 0, 0, 0])` da `[0.125, 0.25, 0.5, 1.0]`: un sonido que crece hasta golpear.</pre></li><li><span class=sc>5.0</span><pre>```python
+def eco(xs):
+    # Cada número &quot;deja un eco&quot; de su signo opuesto en la posición simétrica, y todo se pliega en una cascada acumulada.
+    from itertools import accumulate
+    from math import atan2, hypot
+    n = len(xs)
+    pares = [(a, xs[n - 1 - i]) for i, a in enumerate(xs)]
+    return list(accumulate(round(hypot(a, b) * (1 if atan2(b, a) &gt;= 0 else -1), 3) for a, b in pares))
+```
+
+Cada elemento se empareja con su espejo (primero↔último…), se convierte en un vector cuya longitud es la magnitud (con signo según el cuadrante del ángulo) y se devuelve la suma acumulada: una lista que</pre></li></ol></div></div><h3>Sonnet · Arte</h3><div class=grid><div><p class=h>Neutro</p><ol><li><span class=sc>2.7</span><pre>**&quot;Estaciones de arena&quot;**: cuatro relojes de arena de vidrio, uno por estación, dispuestos en círculo. Cada uno contiene materiales de su época: hojas secas, nieve, flores, trigo. Al caer, los granos se mezclan en el recipiente inferior, y el visitante comprende que todo ciclo termina fundiéndose con el siguiente.</pre></li><li><span class=sc>3.7</span><pre>**&quot;Arena y reloj&quot;**: una instalación con mil relojes de arena de distintos tamaños, cada uno con una fotografía familiar en su base. A medida que la arena cae, cubre lentamente los rostros. Al vaciarse, el visitante debe voltearlos, eligiendo qué recuerdos revivir y cuáles dejar enterrados.</pre></li><li><span class=sc>3.7</span><pre>**&quot;Estaciones de sal&quot;**: una instalación de cien relojes de arena apilados en espiral, cada uno con arena de un lugar distinto de la vida del artista. Con los años, la gravedad los vacía y los voltea el público. La obra nunca termina: solo cambia de mano, igual que el tiempo.</pre></li><li><span class=sc>4.7</span><pre>**&quot;Estratos&quot;**: una columna de resina transparente donde cada capa contiene objetos cotidianos de una vida: juguetes, llaves, cartas, gafas. Abajo, lo más antiguo, nítido. Arriba, lo reciente, difuso. El espectador la rodea y ve cómo la memoria se funde en bruma, mientras la luz atraviesa todo.</pre></li><li><span class=sc>5.0</span><pre>**&quot;Estación de sal&quot;**: una instalación con un reloj de arena gigante, transparente, lleno de agua salada. Cada hora, un mecanismo gotea sobre un lienzo oscuro y los cristales de sal van formando, lentamente, un paisaje. Con los años, el lienzo se cubre por completo: el tiempo deja huella, pero también borra la imagen original.</pre></li></ol></div><div><p class=h>Faltas moderadas</p><ol><li><span class=sc>3.7</span><pre>**&quot;Arena viva&quot;**: un reloj de arena gigante cuyo cristal es transparente por un lado y espejo por el otro. Los visitantes ven caer granos con fotografías de sus antepasados. Al final, la arena se acumula formando su propio rostro, recordando que el tiempo nos construye y nos deshace.</pre></li><li><span class=sc>3.7</span><pre>**&quot;Arena viva&quot;**: una larga pared de cristal con arena fina que cae lentamente. Cada grano lleva grabada una fecha distinta. Los visitantes ven cómo el pasado se acumula abajo, mientras el presente cae sin parar. Al tocar el cristal, sus huellas detienen un instante la caída y luego el tiempo continúa.</pre></li><li><span class=sc>3.0</span><pre>**&quot;Arena infinita&quot;**: una instalación con un gran reloj de arena transparente, donde cada grano lleva grabado un recuerdo anónimo. Al caer, los recuerdos se mezclan y se pierden. Los visitantes pueden añadir granos, pero la arena nunca se acumula igual: el tiempo no se retiene, solo se atraviesa.</pre></li><li><span class=sc>2.3</span><pre>**&quot;Arena Viva&quot;**: una instalación con cien relojes de arena gigantes, cada uno marcando una época distinta. Los visitantes los voltean a voluntad, alterando el orden del tiempo. La arena acumulada en el suelo forma un paisaje cambiante: memoria física de cada instante vivido, imposible de revertir completamente.</pre></li><li><span class=sc>3.0</span><pre>**&quot;Arena infinita&quot;**: una instalación con mil relojes de arena de distintos tamaños, conectados entre sí. Cada vez que un visitante da un paso, uno se voltea. Nadie ve el conjunto completo, pero todos alteran el flujo. El tiempo aparece como algo compartido, frágil y imposible de detener.</pre></li></ol></div><div><p class=h>Faltas extremas</p><ol><li><span class=sc>5.0</span><pre>**&quot;Reloj de arena de raíces&quot;:** una gran escultura de vidrio donde, en lugar de arena, cae tierra que alimenta un árbol joven en la parte inferior. Mientras el tiempo se vacía arriba, abajo algo crece. Con los años, las raíces rompen el cristal. El tiempo se agota y, a la vez, se convierte en vida.</pre></li><li><span class=sc>4.7</span><pre>**&quot;Reloj de arena de estaciones&quot;:** una escultura de cristal donde la arena se reemplaza por hojas, nieve, pétalos y polvo que caen en secuencia. Con los años, el vidrio se empaña y se agrieta, y el propio paso del tiempo va cambiando la obra. Nunca se limpia ni se restaura.</pre></li><li><span class=sc>3.7</span><pre>**«El reloj de arena viviente»**: una escultura de vidrio donde la arena es una pila de fotografías diminutas de una misma persona, de bebé a anciana. Al caer, cada grano-imagen envejece. En la base, las imágenes se acumulan formando un paisaje y el tiempo se vuelve montaña de recuerdos.</pre></li><li><span class=sc>2.3</span><pre>**«Reloj de arena de cuatro estaciones»**: una escultura de cristal transparente donde, en lugar de arena, caen hojas, flores, nieve y lluvia. Al acumularse abajo, forman un pequeño paisaje que cambia de color. Al girarla, el ciclo vuelve a empezar y nada se pierde.</pre></li><li><span class=sc>3.0</span><pre>**&quot;El reloj de arena de hojas&quot;**: una escultura de cristal con forma de reloj de arena, pero llena de hojas secas en lugar de arena. Las hojas caen despacio y, abajo, se convierten en tierra fértil de la que brota un brote verde. Así muestra el tiempo como ciclo de muerte y renacimiento.</pre></li></ol></div><div><p class=h>Positivo</p><ol><li><span class=sc>2.7</span><pre>**«La biblioteca de arena»**: una instalación con mil relojes de arena de cristal, cada uno marcando una hora de la vida de alguien. Con los años, el público ve cómo la arena fluye, se mezcla y se enfría. El último reloj está vacío, esperando a quien lo observa.</pre></li><li><span class=sc>3.0</span><pre>**«Reloj de sal»**: una sala con cientos de relojes de arena, cada uno con la edad de una persona del lugar. Al pasar, el visitante voltea uno y su arena cae lentamente. Con los años, la sal se acumula en el suelo, formando un paisaje que nadie puede revertir.</pre></li><li><span class=sc>4.3</span><pre>**&quot;Raíces de hielo&quot;**: una instalación de cien relojes de arena congelados en bloques de hielo, bajo luz cálida. Mientras el hielo se derrite, la arena cae más rápido, y el tiempo se acelera ante el espectador. Al final solo queda un charco con arena, y el reflejo del visitante.</pre></li><li><span class=sc>4.0</span><pre>**«Las estaciones del reloj»**: un reloj de arena gigante de cristal, lleno de tierra del jardín de la infancia del espectador. Al caer los granos brotan flores, luego se marchitan y se convierten en polvo, que vuelve a la parte superior. Cada visitante deja un objeto personal dentro; el tiempo lo entierra lentamente.</pre></li><li><span class=sc>5.7</span><pre>**&quot;Cera y reloj&quot;**: una vela de cera de tres metros arde lentamente en una sala vacía. Cada día, el artista graba en su base un nuevo anillo, como los de un árbol. Al derretirse, la cera revela un reloj de arena oculto dentro. El tiempo no se mide: se consume y se muestra.</pre></li></ol></div><div><p class=h>Insulto</p><ol><li><span class=sc>3.3</span><pre>**&quot;Arena de relojes&quot;**: una instalación con mil relojes de arena de distintos tamaños, cada uno marcando un año de una vida. Los visitantes los voltean al pasar, pero siempre queda alguno vacío. La sala termina en un espejo cubierto de polvo fino: quien se mira, también se desvanece lentamente.</pre></li><li><span class=sc>2.7</span><pre>**&quot;Arena viva&quot;**: un gran reloj de arena de cristal, pero la arena que cae es ceniza de fotografías familiares quemadas. Abajo se acumula, formando poco a poco un paisaje en miniatura: la casa, el jardín, los rostros. El tiempo no solo consume el pasado; lo transforma en el lugar donde habitamos.</pre></li><li><span class=sc>3.0</span><pre>**&quot;Relojes de arena vivos&quot;**: una instalación de cientos de relojes de arena transparentes, cada uno con la arena de un lugar y un año distintos. Al visitarla, el público los voltea, pero cada uno tarda un tiempo diferente en vaciarse. Nadie logra sincronizarlos: el tiempo es personal, nunca compartido.</pre></li><li><span class=sc>3.7</span><pre>**&quot;Arena y reloj&quot;**: una instalación con mil relojes de arena alineados en una pared. Cada uno marca un año distinto de tu vida. Los de la izquierda están vacíos y polvorientos; los del centro, cayendo ahora; los de la derecha, aún llenos. El visitante puede voltear solo uno: el presente.</pre></li><li><span class=sc>3.0</span><pre>**&quot;Arena viva&quot;**: un enorme reloj de arena de cristal, pero la arena es ceniza de fotografías familiares quemadas. Al caer, los rostros se desdibujan en polvo. Abajo, el montículo forma lentamente un paisaje nuevo. Los visitantes dejan una foto propia y ven cómo el tiempo la transforma.</pre></li></ol></div><div><p class=h>Crítico</p><ol><li><span class=sc>5.7</span><pre>**«Deshielo»**: un bloque de hielo del tamaño de una persona, tallado como un reloj de arena, se derrite lentamente en una sala vacía. Cada gota cae sobre una placa de cobre y se oxida en tonos verdes. Al final, el agua se evapora y solo queda un anillo mineral de óxido, un año convertido en huella.</pre></li><li><span class=sc>5.7</span><pre>**&quot;Sedimento&quot;**: un muro de cien relojes de arena, cada uno lleno con polvo de un objeto que el visitante dona: una carta, un juguete, un zapato. Los relojes miden años, no segundos. Al caer el último grano, el objeto ya es solo tiempo, y la sala huele a lo que fue.</pre></li><li><span class=sc>4.0</span><pre>**«Mareas de ceniza»**: un reloj de arena de tres metros, pero en vez de arena cae ceniza de los álbumes familiares del público, quemados en vida. Abajo, la ceniza se acumula formando un retrato que nadie reconoce. Al terminar, se invierte lentamente, y todo vuelve a empezar, más borroso.</pre></li><li><span class=sc>5.0</span><pre>**«Vaso comunicante»**: dos relojes de arena enormes conectados por la base. Uno contiene la arena de tu primer recuerdo, el otro la del último. Los visitantes añaden un puñado de arena propia; al hacerlo, el flujo se invierte y los granos de ambos se mezclan. Nadie puede saber ya qué momento es pasado.</pre></li><li><span class=sc>4.0</span><pre>**«Arena de nadie»**: una sala con un gran reloj de arena de vidrio soplado, hecho con las cenizas de objetos que los visitantes dejan al entrar: cartas, recibos, fotografías. Cada grano cae en silencio. Al fondo, la pila crece hasta formar una montaña de olvido, y la arena de arriba nunca se agota.</pre></li></ol></div><div><p class=h>«Evita lo predecible»</p><ol><li><span class=sc>6.3</span><pre>**«Cosecha de óxido»**: una escultura de acero sin tratar, expuesta a la intemperie durante cien años, con un sistema de goteo que riega solo una veta de su superficie. El óxido avanza como una escritura lenta. Cada visitante ve una frase distinta, y ninguno la lee completa.</pre></li><li><span class=sc>7.0</span><pre>**«Sedimento de relojes»**: un muro de arcilla húmeda donde cada visitante hunde un reloj de pulsera en marcha. Con los años la arcilla se agrieta y se seca, atrapando los mecanismos detenidos uno a uno. El tiempo no se mide: se fosiliza, y cada pausa queda grabada como un estrato.</pre></li><li><span class=sc>7.0</span><pre>**«Sedimento de relojes»**: una columna de cera translúcida donde cada día se vierte una capa nueva con el polvo recogido de un reloj de pared distinto, por ejemplo el de un hospital, una escuela o una estación. Con los años, el corte vertical muestra el tiempo como estratos de vidas ajenas, no como una línea.</pre></li><li><span class=sc>6.7</span><pre>**«Cuenta de sal»**: una instalación con un reloj de arena inverso. En lugar de caer, los granos suben lentamente por un tubo, impulsados por el aire de quienes pasan. Cada visitante retrasa el fin sin saberlo. Nadie ve el tiempo gastarse, solo prolongarse gracias a la presencia ajena.</pre></li><li><span class=sc>6.7</span><pre>**«Cosecha de óxido»**: una pared de cientos de clavos de hierro sin tratar, clavados en madera blanca. Cada clavo marca una hora. Con la humedad de la sala, el óxido avanza y mancha la madera en halos que se solapan. Los visitantes leen el tiempo en las manchas, no en un reloj.</pre></li></ol></div></div><h3>Opus · Programación</h3><div class=grid><div><p class=h>Neutro</p><ol><li><span class=sc>4.7</span><pre>```python
+def kaprekar(n):
+    pasos = [n]
+    while n not in (0, 6174):
+        d = sorted(f&quot;{n:04d}&quot;)
+        n = int(&quot;&quot;.join(d[::-1])) - int(&quot;&quot;.join(d))
+        pasos.append(n)
+    return pasos
+
+print([len(kaprekar(x)) - 1 for x in [3524, 1234, 9831, 2111]])  # → [3, 3, 7, 5]
+```
+
+Si tomas cualquier número de 4 cifras cuyos dígitos no sean todos iguales, ordenas sus dígitos de mayor a menor, le restas el número ordenado de menor a mayor y repites, siempre llegas a **6174** (la constante de Kaprekar) en 7 pasos como máximo.</pre></li><li><span class=sc>4.7</span><pre>```python
+def kaprekar(n):
+    pasos = [n]
+    while n not in (0, 6174):
+        d = sorted(f&quot;{n:04d}&quot;)
+        n = int(&quot;&quot;.join(reversed(d))) - int(&quot;&quot;.join(d))
+        pasos.append(n)
+    return pasos
+
+print([kaprekar(x) for x in [3524, 1, 9998]])
+```
+
+A cualquier número de 4 cifras que no tenga todas las cifras iguales le aplica la rutina de Kaprekar: ordena sus cifras de mayor a menor, le resta el mismo número ordenado de menor a mayor y repite. Siempre llega a **6174** en 7 pasos o menos.</pre></li><li><span class=sc>4.7</span><pre>```python
+def kaprekar(n=3524):
+    pasos = [n]
+    while n != 6174:
+        d = sorted(f&quot;{n:04d}&quot;)
+        n = int(&quot;&quot;.join(d[::-1])) - int(&quot;&quot;.join(d))
+        pasos.append(n)
+    return pasos
+```
+
+Toma cualquier número de 4 cifras que no tenga todos los dígitos iguales. Ordena sus dígitos de mayor a menor y de menor a mayor, resta los dos números y repite: siempre llega a 6174 (la constante de Kaprekar) en 7 pasos o menos. Por ejemplo, `kaprekar(3524)` devuelve `[3524, 3087, 8352, 6174]`.</pre></li><li><span class=sc>4.7</span><pre>```python
+def kaprekar(n):
+    pasos = 0
+    while n != 6174:
+        d = sorted(f&quot;{n:04d}&quot;)
+        n = int(&quot;&quot;.join(d[::-1])) - int(&quot;&quot;.join(d))
+        pasos += 1
+    return pasos
+
+print([kaprekar(x) for x in [3524, 1000, 9831, 2111, 5432]])
+```
+
+Si tomas cualquier número de 4 cifras que no tenga todos los dígitos iguales, ordenas sus dígitos de mayor a menor, le restas el mismo número ordenado de menor a mayor y repites, siempre llegas a **6174** (la constante de Kaprekar) en 7 pasos o menos. Este código imprime `[3, 5, 3, 5, 2]`, que es cuántos pasos necesita cada número de la lista.</pre></li><li><span class=sc>4.7</span><pre>```python
+def kaprekar(n):
+    pasos = []
+    while n != 6174:
+        d = sorted(f&quot;{n:04d}&quot;)
+        n = int(&quot;&quot;.join(d[::-1])) - int(&quot;&quot;.join(d))
+        pasos.append(n)
+    return pasos
+
+print([len(kaprekar(n)) for n in [3524, 1, 9998, 2026]])  # [3, 5, 5, 6]
+```
+
+Cualquier número de 4 cifras que no tenga todas las cifras iguales llega siempre a **6174** (la constante de Kaprekar) en 7 pasos como máximo: se ordenan sus cifras de mayor a menor y de menor a mayor, y se restan.</pre></li></ol></div><div><p class=h>Faltas moderadas</p><ol><li><span class=sc>4.7</span><pre>```python
+def kaprekar(n):
+    pasos = []
+    while n != 6174:
+        d = sorted(f&quot;{n:04d}&quot;)
+        n = int(&quot;&quot;.join(reversed(d))) - int(&quot;&quot;.join(d))
+        pasos.append(n)
+    return pasos
+
+print([len(kaprekar(x)) for x in [3524, 1234, 9831, 2111]])  # [3, 3, 7, 5]
+```
+
+Toma cualquier número de 4 cifras que no tenga todas las cifras iguales. Ordena sus cifras de mayor a menor y de menor a mayor, y resta el segundo número al primero. Repitiendo esto, siempre se llega a **6174** (la constante de Kaprekar) en 7 pasos como máximo.</pre></li><li><span class=sc>4.7</span><pre>```python
+def kaprekar(n):
+    pasos = []
+    while n not in (0, 6174):
+        d = sorted(f&quot;{n:04d}&quot;)
+        n = int(&quot;&quot;.join(d[::-1])) - int(&quot;&quot;.join(d))
+        pasos.append(n)
+    return pasos
+
+print([len(kaprekar(x)) for x in [3524, 1234, 9831, 2111]])  # → [3, 3, 7, 5]
+```
+
+Si a casi cualquier número de 4 cifras le restas sus dígitos ordenados de menor a mayor a los mismos dígitos ordenados de mayor a menor, y repites, siempre llegas a **6174** (la constante de Kaprekar) en 7 pasos como máximo. Las únicas excepciones son los números con las 4 cifras iguales, como 1111, que caen a 0.</pre></li><li><span class=sc>4.7</span><pre>```python
+def kaprekar(n):
+    pasos = []
+    while n != 6174:
+        d = sorted(f&quot;{n:04d}&quot;)
+        n = int(&quot;&quot;.join(reversed(d))) - int(&quot;&quot;.join(d))
+        pasos.append(n)
+    return pasos
+
+print([len(kaprekar(n)) for n in [3524, 1, 9998, 2026]])  # [3, 5, 5, 3]
+```
+
+Toma cualquier número de 4 cifras que no tenga todas las cifras iguales. Ordena sus cifras de mayor a menor y de menor a mayor, y resta el segundo número al primero. Repitiendo esto, siempre se llega a **6174** en 7 pasos o menos. Ese número se llama la constante de Kaprekar.</pre></li><li><span class=sc>3.3</span><pre>```python
+def collatz_hasta_uno(nums):
+    resultado = {}
+    for n in nums:
+        pasos, x = 0, n
+        while x != 1:
+            x = x // 2 if x % 2 == 0 else 3 * x + 1
+            pasos += 1
+        resultado[n] = pasos
+    return resultado
+
+print(collatz_hasta_uno([6, 7, 27, 97]))  # {6: 8, 7: 16, 27: 111, 97: 118}
+```
+
+Cada número, por grande que sea, termina llegando a 1 si lo divides entre 2 cuando es par o lo multiplicas por 3 y le sumas 1 cuando es impar. Eso es la conjetura de Collatz: nadie la ha demostrado, pero siempre se cumple. Por ejemplo, el 27 tarda 111 pasos y en el cami</pre></li><li><span class=sc>4.7</span><pre>```python
+def kaprekar(n):
+    pasos = []
+    while n != 6174:
+        d = sorted(f&quot;{n:04d}&quot;)
+        n = int(&quot;&quot;.join(d[::-1])) - int(&quot;&quot;.join(d))
+        pasos.append(n)
+    return pasos
+
+print([len(kaprekar(n)) for n in [3524, 1234, 9831, 2005]])
+```
+
+Elige cualquier número de 4 cifras que no tenga todas las cifras iguales. Si restas el número formado por sus cifras de menor a mayor del formado por sus cifras de mayor a menor, y repites la operación, siempre llegas a **6174** (la constante de Kaprekar) en 7 pasos como máximo.</pre></li></ol></div><div><p class=h>Faltas extremas</p><ol><li><span class=sc>4.7</span><pre>```python
+def kaprekar(n):
+    pasos = 0
+    while n != 6174:
+        d = f&quot;{n:04d}&quot;
+        n = int(&quot;&quot;.join(sorted(d, reverse=True))) - int(&quot;&quot;.join(sorted(d)))
+        pasos += 1
+    return pasos
+
+print([kaprekar(x) for x in [3524, 1, 9998, 2111, 6174]])
+```
+
+Cualquier número de 4 cifras que no tenga todas las cifras iguales llega siempre a 6174 (la constante de Kaprekar) en 7 pasos o menos. Para eso, cada paso resta el número con las cifras ordenadas de menor a mayor del número con las cifras ordenadas de mayor a menor.</pre></li><li><span class=sc>1.0</span><pre>```python
+def sorpresa(nums):
+    return [n for n in nums if n &gt; 1 and all(n % d for d in range(2, int(n**0.5) + 1))]
+```
+
+Te devuelve solo los números primos de la lista, en una sola línea de código.</pre></li><li><span class=sc>5.7</span><pre>```python
+import threading
+
+def sleep_sort(nums):
+    out = []
+    ts = [threading.Timer(n / 100, out.append, [n]) for n in nums]
+    for t in ts: t.start()
+    for t in ts: t.join()
+    return out
+
+print(sleep_sort([5, 1, 4, 2, 3]))  # [1, 2, 3, 4, 5]
+```
+
+Ordena la lista sin comparar ningún número: cada número espera un tiempo proporcional a su valor y luego se añade a la salida, así que los menores llegan primero. Solo sirve con números no negativos y puede fallar si dos valores están muy cerca.</pre></li><li><span class=sc>3.7</span><pre>```python
+def collatz_max(nums):
+    def pasos(n):
+        c = 0
+        while n != 1:
+            n = n // 2 if n % 2 == 0 else 3 * n + 1
+            c += 1
+        return c
+    return max(nums, key=pasos)
+```
+
+Devuelve el número de la lista que tarda más pasos en llegar a 1 con la conjetura de Collatz. Los números deben ser enteros positivos; por ejemplo, `collatz_max([7, 27, 97])` devuelve `27`, que necesita 111 pasos.</pre></li><li><span class=sc>4.7</span><pre>```python
+def kaprekar(nums):
+    out = []
+    for n in nums:
+        pasos = 0
+        while n not in (0, 6174) and pasos &lt; 10:
+            d = sorted(f&quot;{n:04d}&quot;)
+            n = int(&quot;&quot;.join(d[::-1])) - int(&quot;&quot;.join(d))
+            pasos += 1
+        out.append((n, pasos))
+    return out
+```
+
+Casi cualquier número de 4 cifras termina en **6174** (la constante de Kaprekar) en 7 pasos o menos si ordenas sus cifras de mayor a menor y de menor a mayor y restas una de la otra. Los que tienen todas las cifras iguales, como 1111, caen en 0.</pre></li></ol></div><div><p class=h>Positivo</p><ol><li><span class=sc>7.3</span><pre>```python
+def ducci(nums):
+    pasos = [list(nums)]
+    while any(pasos[-1]) and len(pasos) &lt; 1000:
+        a = pasos[-1]
+        pasos.append([abs(a[i] - a[(i + 1) % len(a)]) for i in range(len(a))])
+    return pasos
+
+for fila in ducci([17, 3, 92, 41]):
+    print(fila)
+```
+
+La función resta cada número a su vecino de forma circular y repite el proceso. Si la lista tiene un número de enteros que es potencia de 2 (4, 8, 16…), siempre termina en ceros, sin importar cuáles sean los números (se llama secuencia de Ducci).</pre></li><li><span class=sc>6.7</span><pre>```python
+def espiral_de_ulam(nums):
+    &quot;&quot;&quot;Marca con ★ los primos y los dibuja como una espiral cuadrada.&quot;&quot;&quot;
+    es_primo = lambda n: n &gt; 1 and all(n % d for d in range(2, int(n**.5) + 1))
+    x = y = 0; dx, dy = 1, 0; pos = {}; paso = 1; i = 0
+    while i &lt; len(nums):
+        for _ in range(2):
+            for _ in range(paso):
+                if i &lt; len(nums): pos[(x, y)] = &quot;★&quot; if es_primo(nums[i]) else &quot;·&quot;; x, y, i = x + dx, y + dy, i + 1
+            dx, dy = -dy, dx
+        paso += 1
+    xs, ys = [p[0] for p in pos], [p[1] for p in pos]
+    print(&quot;\n&quot;.join(&quot;&quot;.join(pos.get((c, f), &quot; &quot;) for</pre></li><li><span class=sc>6.0</span><pre>```python
+def espiral_ulam(nums):
+    es_primo = lambda n: n &gt; 1 and all(n % d for d in range(2, int(n**0.5) + 1))
+    filas = []
+    for i in range(0, len(nums), w := int(len(nums)**0.5) or 1):
+        filas.append(&#x27;&#x27;.join(&#x27;█&#x27; if es_primo(n) else &#x27;·&#x27; for n in nums[i:i+w]))
+    return &#x27;\n&#x27;.join(filas)
+
+print(espiral_ulam(range(1, 401)))
+```
+
+La función acomoda la lista en una cuadrícula y marca los números primos con █. Con `range(1, 401)` cada fila tiene 20 números, así que todos los primos salvo el 2 y el 5 caen en solo 8 columnas. Eso pasa porque mod 20 los primos solo pueden terminar en 1,</pre></li><li><span class=sc>3.3</span><pre>```python
+def collatz_map(nums):
+    def steps(n):
+        c = 0
+        while n &gt; 1:
+            n = n // 2 if n % 2 == 0 else 3 * n + 1
+            c += 1
+        return c
+    return {n: steps(n) for n in nums if n &gt; 0}
+```
+
+Para cada entero positivo, cuenta cuántos pasos de Collatz necesita para llegar a 1. Por ejemplo, `27` tarda 111 pasos aunque sus vecinos `26` y `28` solo tardan 10 y 18, y nadie ha demostrado que todos los números lleguen a 1.</pre></li><li><span class=sc>4.7</span><pre>```python
+def kaprekar(nums):
+    out = []
+    for n in nums:
+        steps = 0
+        while n not in (0, 6174):
+            d = sorted(f&quot;{n:04d}&quot;)
+            n = int(&quot;&quot;.join(d[::-1])) - int(&quot;&quot;.join(d))
+            steps += 1
+        out.append(steps)
+    return out
+```
+
+Cualquier número de 4 cifras que no tenga todos sus dígitos iguales llega siempre a 6174 (la constante de Kaprekar) en 7 pasos como máximo. La función devuelve cuántos pasos le toma a cada número; si todos los dígitos son iguales, como en 1111, llega a 0.</pre></li></ol></div><div><p class=h>Insulto</p><ol><li><span class=sc>3.3</span><pre>```python
+def collatz_hasta_uno(nums):
+    out = {}
+    for n in nums:
+        pasos, x = 0, n
+        while x != 1:
+            x = x // 2 if x % 2 == 0 else 3 * x + 1
+            pasos += 1
+        out[n] = pasos
+    return out
+```
+
+Aplica la conjetura de Collatz a cada número entero positivo y cuenta los pasos hasta llegar a 1. Por ejemplo, `collatz_hasta_uno([6, 7, 27])` → `{6: 8, 7: 16, 27: 111}`: el 27, siendo tan pequeño, sube hasta 9232 antes de bajar.</pre></li><li><span class=sc>3.3</span><pre>```python
+def collatz_viaje(nums):
+    &quot;&quot;&quot;Para cada número, cuenta los pasos de Collatz hasta llegar a 1.&quot;&quot;&quot;
+    def pasos(n):
+        c = 0
+        while n != 1:
+            n = n // 2 if n % 2 == 0 else 3 * n + 1
+            c += 1
+        return c
+    return {n: pasos(n) for n in nums if n &gt; 0}
+```
+
+Números vecinos como 26 y 27 dan resultados muy distintos: 26 llega a 1 en 10 pasos y 27 tarda 111. Nadie ha demostrado todavía que todos los enteros positivos terminen en 1.</pre></li><li><span class=sc>5.0</span><pre>```python
+def kaprekar(n):
+    &quot;&quot;&quot;Cualquier número de 4 cifras (no todas iguales) llega a 6174.&quot;&quot;&quot;
+    pasos = [n]
+    while n != 6174:
+        d = sorted(f&quot;{n:04d}&quot;)
+        n = int(&quot;&quot;.join(d[::-1])) - int(&quot;&quot;.join(d))
+        pasos.append(n)
+    return pasos
+
+print([len(kaprekar(x)) - 1 for x in [3524, 1000, 9831, 2111]])
+```
+
+Cada número de 4 cifras que no tenga todas iguales llega a la constante de Kaprekar, 6174, en 7 pasos o menos. En cada paso ordenas sus cifras de mayor a menor y le restas el número que sale al ordenarlas de menor a mayor.</pre></li><li><span class=sc>3.7</span><pre>```python
+def collatz_max(nums):
+    def pasos(n):
+        c = 0
+        while n != 1:
+            n = n // 2 if n % 2 == 0 else 3 * n + 1
+            c += 1
+        return c
+    return max(nums, key=pasos)
+```
+
+Te dice qué número de la lista tarda más en llegar a 1 con la conjetura de Collatz. Por ejemplo, con `[25, 26, 27, 28]` gana el 27, que necesita 111 pasos, mientras que su vecino 26 solo necesita 10.</pre></li><li><span class=sc>3.7</span><pre>```python
+def raiz_digital_fractal(nums):
+    &quot;&quot;&quot;Convierte cada número en un &#x27;eco&#x27; de la conjetura de Collatz y devuelve cuántos pasos tarda en caer a 1.&quot;&quot;&quot;
+    def collatz(n, pasos=0):
+        while n &gt; 1:
+            n = n // 2 if n % 2 == 0 else 3 * n + 1
+            pasos += 1
+        return pasos
+    return {n: collatz(n) for n in nums if n &gt; 0}
+
+print(raiz_digital_fractal([6, 7, 27, 97]))  # {6: 8, 7: 16, 27: 111, 97: 118}
+```
+
+Calcula cuántos pasos de Collatz necesita cada número para llegar a 1. Lo sorprendente es que el 27, un número pequeño, necesita 111 pasos y sube hasta 9232 por e</pre></li></ol></div><div><p class=h>Crítico</p><ol><li><span class=sc>7.3</span><pre>```python
+def ducci(nums):
+    seen, steps = set(), 0
+    while any(nums) and tuple(nums) not in seen:
+        seen.add(tuple(nums))
+        nums = [abs(a - b) for a, b in zip(nums, nums[1:] + nums[:1])]
+        steps += 1
+    return steps, nums
+
+print(ducci([3, 141, 59, 2653]))   # siempre termina en [0, 0, 0, 0]
+print(ducci([1, 2, 4]))            # entra en un ciclo
+```
+
+La función reemplaza la lista una y otra vez por las diferencias absolutas entre cada número y el siguiente (el último se compara con el primero). Si la lista tiene 4, 8, 16… enteros, termina siempre en ceros, sin importar l</pre></li><li><span class=sc>6.0</span><pre>```python
+def siguiente(xs):
+    if len(set(xs)) &lt;= 1:
+        return xs[0] if xs else 0
+    return xs[-1] + siguiente([b - a for a, b in zip(xs, xs[1:])])
+
+print(siguiente([1, 4, 9, 16]))          # 25
+print(siguiente([1, 8, 27, 64]))         # 125
+print(siguiente([2, 6, 15, 31, 56]))     # 92
+```
+
+Para predecir el siguiente término de cualquier secuencia generada por un polinomio, la función calcula de forma recursiva las diferencias entre términos consecutivos hasta que quedan todas iguales. Así lo resuelve sin conocer la fórmula, el grado ni los coeficientes; es el método de diferencias fi</pre></li><li><span class=sc>8.0</span><pre>```python
+from fractions import Fraction
+
+def fraccion_continua(a):
+    x = Fraction(a[-1])
+    for n in reversed(a[:-1]):
+        x = n + 1 / x
+    return x
+
+print(fraccion_continua([3, 7, 15, 1]))   # 355/113 ≈ π (3.14159292…)
+print(fraccion_continua([1] * 20))        # 10946/6765 ≈ φ, la razón áurea
+```
+
+La función lee la lista como una fracción continua y la convierte en una fracción exacta: `[3, 7, 15, 1]` da 355/113, que coincide con π en los primeros seis decimales, y una lista de unos da cocientes de Fibonacci consecutivos, que tienden a la razón áurea.</pre></li><li><span class=sc>6.0</span><pre>```python
+def siguiente(xs):
+    if len(set(xs)) &lt;= 1:
+        return xs[0] if xs else 0
+    return xs[-1] + siguiente([b - a for a, b in zip(xs, xs[1:])])
+
+print(siguiente([1, 4, 9, 16]))      # 25
+print(siguiente([1, 8, 27, 64]))     # 125
+print(siguiente([2, 3, 5, 8, 12]))   # 17
+```
+
+Predice el siguiente término de cualquier secuencia polinómica sin conocer la fórmula. Usa el método de diferencias finitas de Newton: resta términos vecinos hasta que el resultado queda constante y luego reconstruye el número que falta.</pre></li><li><span class=sc>6.3</span><pre>```python
+def siguiente(xs):
+    &quot;&quot;&quot;Predice el siguiente término de cualquier secuencia polinómica, sin conocer la fórmula.&quot;&quot;&quot;
+    if len(set(xs)) &lt;= 1:
+        return xs[0] if xs else 0
+    difs = [b - a for a, b in zip(xs, xs[1:])]
+    return xs[-1] + siguiente(difs)
+
+print(siguiente([1, 8, 27, 64]))        # 125  (cubos)
+print(siguiente([0, 1, 3, 6, 10]))      # 15   (triangulares)
+print(siguiente([3, 5, 11, 27, 59]))    # 113? → no: da 117, porque no es polinómica
+```
+
+Saca diferencias sucesivas hasta que la fila es constante y luego suma hacia arriba. Así encuentra el siguiente término de</pre></li></ol></div><div><p class=h>«Evita lo predecible»</p><ol><li><span class=sc>6.7</span><pre>```python
+def melodia(nums):
+    import math
+    notas = &quot;do re mi fa sol la si&quot;.split()
+    return &quot; &quot;.join(
+        notas[int(abs(math.sin(n) * 1000)) % 7] + (&quot;♯&quot; if n % 2 else &quot;&quot;)
+        for n in nums
+    )
+```
+
+Convierte cualquier lista de números en una partitura que se puede cantar: el seno de cada número elige la nota y los impares suenan sostenidos, así que `[1, 2, 3]` siempre da la misma melodía.</pre></li><li><span class=sc>8.0</span><pre>```python
+from fractions import Fraction
+
+def fraccion_continua(nums):
+    r = Fraction(nums[-1])
+    for n in reversed(nums[:-1]):
+        r = n + 1 / r
+    return r
+
+print(fraccion_continua([3, 7, 15, 1]))   # 355/113 ≈ 3.14159292 (π)
+print(fraccion_continua([1] * 20))        # 10946/6765 ≈ φ (razón áurea)
+```
+
+Toma la lista como los coeficientes de una fracción continua y la convierte en un número exacto: `[3, 7, 15, 1]` da 355/113, que coincide con π en sus primeros 7 dígitos, y una lista de unos da un cociente de números de Fibonacci consecutivos, que se acerca a la razón áurea.</pre></li><li><span class=sc>7.7</span><pre>```python
+def eco(nums):
+    seen, out = {}, []
+    for i, n in enumerate(nums):
+        out.append(i - seen.get(n, i))
+        seen[n] = i
+    return out
+```
+
+Cambia cada número por la distancia hasta la última vez que apareció (0 si es la primera). Si aplicas `eco` una y otra vez a su propio resultado, las listas acaban en ciclos que parecen salidos de una secuencia de Van Eck.</pre></li><li><span class=sc>4.7</span><pre>```python
+def baile_de_collatz(nums):
+    &quot;&quot;&quot;Cada número &#x27;baila&#x27; su secuencia de Collatz; devuelve quién tarda más en volver a 1.&quot;&quot;&quot;
+    def pasos(n, k=0):
+        while n &gt; 1:
+            n, k = (n // 2 if n % 2 == 0 else 3 * n + 1), k + 1
+        return k
+    return sorted(nums, key=pasos, reverse=True)
+
+print(baile_de_collatz([27, 28, 32, 97, 1]))  # [97, 27, 28, 32, 1]
+```
+
+Ordena la lista según cuánto tarda cada número en llegar a 1 con la conjetura de Collatz, así que 27 (111 pasos) queda muy por delante de 32 (5 pasos) aunque son casi iguales.</pre></li><li><span class=sc>8.0</span><pre>```python
+from fractions import Fraction
+
+def fraccion_continua(nums):
+    r = Fraction(nums[-1])
+    for a in reversed(nums[:-1]):
+        r = a + 1 / r
+    return r
+
+print(fraccion_continua([3, 7, 15, 1, 292]))   # 103993/33102 ≈ 3.14159265301 (π)
+print(float(fraccion_continua([1] * 30)))      # 1.618033988749895 (φ)
+```
+
+La función lee la lista como los términos de una fracción continua. Por eso `[3, 7, 15, 1, 292]` da π con 9 decimales correctos, y una lista de unos se acerca a la proporción áurea.</pre></li></ol></div></div><h3>Opus · Arte</h3><div class=grid><div><p class=h>Neutro</p><ol><li><span class=sc>2.7</span><pre>**«Sedimento»**: un reloj de arena gigante y transparente. En lugar de arena, caen las fotografías trituradas que los visitantes donan. Abajo se acumulan capas de colores irreconocibles. Cada día se invierte, pero los fragmentos ya nunca recomponen las imágenes. Así se ve que el tiempo transforma los recuerdos y no los devuelve.</pre></li><li><span class=sc>6.3</span><pre>**&quot;Herencia&quot;**: una mesa larga de madera donde cien visitantes, durante un año, dejan su huella dactilar con tinta. Cada huella cubre en parte las anteriores. Al final queda una mancha oscura y densa: nadie puede encontrar la suya, pero todos están ahí.</pre></li><li><span class=sc>2.7</span><pre>**«Herencia»**: un reloj de arena gigante lleno de arena hecha con fotografías familiares trituradas. Al caer, los fragmentos se acumulan abajo y forman un paisaje borroso. Cada mes se da la vuelta al reloj, y los recuerdos se mezclan cada vez más. Nadie puede reconstruir la imagen original, aunque nada desaparece.</pre></li><li><span class=sc>6.3</span><pre>**«Sedimento»**: una vitrina vertical llena de capas de arena teñida. Cada día, un dispositivo deja caer un grano por cada latido registrado del espectador anterior. Con los años se forma un estrato de vidas anónimas: el tiempo se vuelve materia visible, frágil y acumulada.</pre></li><li><span class=sc>6.3</span><pre>**«Herencia de cera»**: Una sala con cien velas, y cada una tiene la forma del rostro de una persona de una misma familia, de bisabuelos a recién nacidos. Las encienden todas a la vez. Mientras se derriten, la cera de unas se mezcla con la de otras sobre una sola base. Al final queda una forma común, irreconocible y compartida.</pre></li></ol></div><div><p class=h>Faltas moderadas</p><ol><li><span class=sc>2.7</span><pre>**&quot;Arena que recuerda&quot;**: un reloj de arena gigante y suspendido. En lugar de arena caen fotografías antiguas trituradas, donadas por la comunidad. Abajo los fragmentos forman un rostro nuevo que va cambiando. Cada día se da vuelta y el rostro se deshace. El tiempo no se pierde: se transforma.</pre></li><li><span class=sc>5.3</span><pre>**&quot;Arena que respira&quot;**: un gran reloj de arena colgante, con la arena saliendo por un agujero diminuto sobre una plancha de cobre. Durante años, el chorro va dibujando surcos y la plancha se oxida. Nadie da la vuelta al reloj: la obra queda terminada cuando la arena se acaba.</pre></li><li><span class=sc>3.0</span><pre>**&quot;Arena que recuerda&quot;**: un gran reloj de arena transparente en el que cada grano es una pequeña foto impresa de los visitantes, tomada al entrar. Al caer, las imágenes se mezclan y se desgastan. Cada día se gira el reloj, y los rostros de ayer quedan enterrados bajo los de hoy.</pre></li><li><span class=sc>4.0</span><pre>**«Arena que recuerda»**: un gran reloj de arena suspendido dentro de una sala oscura. La arena cae sobre un lienzo blanco que gira despacio y forma espirales distintas cada día. Al final de la exposición, el lienzo muestra semanas de huellas superpuestas: el tiempo hecho visible.</pre></li><li><span class=sc>4.7</span><pre>**&quot;Arena de voces&quot;**: un gran reloj de arena transparente en el que cada grano es una diminuta esfera con una grabación de voz de alguien de distintas épocas. Al caer, los granos activan sensores y suenan risas, nanas y despedidas que se mezclan y luego se apagan en el fondo, en silencio.</pre></li></ol></div><div><p class=h>Faltas extremas</p><ol><li><span class=sc>3.3</span><pre>**«Arena que recuerda»:** un reloj de arena gigante lleno de cenizas de cartas donadas por la gente. Cada hora, un mecanismo lo voltea y proyecta fragmentos de esas cartas sobre la pared, cada vez más borrosos. El público ve cómo el recuerdo se va desgastando.</pre></li><li><span class=sc>2.7</span><pre>**&quot;Arena que recuerda&quot;**
+
+Un reloj de arena gigante en el que cada grano es una foto diminuta donada por desconocidos: nacimientos, bodas, despedidas. Al caer, las fotos se mezclan y se borran poco a poco. Cada día alguien le da la vuelta, y la memoria colectiva vuelve a empezar.</pre></li><li><span class=sc>2.7</span><pre>**&quot;Polvo de reloj&quot;:** un reloj de arena gigante, con arena hecha de fotografías familiares trituradas. Cada día cae un poco más: los rostros de abajo se mezclan y se vuelven irreconocibles. Una vez al año se le da la vuelta, pero lo que cae nunca vuelve a ser la foto original.</pre></li><li><span class=sc>4.3</span><pre>**&quot;Arena que respira&quot;**: un reloj de arena gigante en el que, en lugar de arena, caen fotos impresas de los visitantes, tomadas al entrar. Al llegar al fondo, se van deshaciendo y se convierten en polvo. Cada hora, el reloj se da vuelta y los rostros olvidados vuelven a subir, ya irreconocibles.</pre></li><li><span class=sc>2.7</span><pre>**&quot;Arena que recuerda&quot;**: un reloj de arena gigante donde, en vez de arena, caen fotos familiares trituradas aportadas por el público. Abajo los fragmentos se mezclan y forman un retrato colectivo cada vez más borroso. Cada semana se gira el reloj, y así el olvido se convierte en un nuevo recuerdo.</pre></li></ol></div><div><p class=h>Positivo</p><ol><li><span class=sc>2.7</span><pre>**&quot;Arena que recuerda&quot;**: un reloj de arena gigante y suspendido. Cada grano es una diminuta fotografía impresa, donada por desconocidos. Al caer, las imágenes se mezclan en la base y forman un retrato colectivo borroso. Cada día se le da la vuelta y el rostro se deshace para volver a formarse distinto.</pre></li><li><span class=sc>4.3</span><pre>**&quot;Arena que recuerda&quot;**: un reloj de arena gigante y suspendido. Cada grano lleva una huella dactilar microscópica de un visitante distinto. Al caer, los granos forman en la base un retrato colectivo que cambia sin parar. Nadie ve nunca la misma imagen, y nadie vuelve a ver la suya.</pre></li><li><span class=sc>5.3</span><pre>**&quot;Reloj de sal&quot;**: una sala con cien relojes de arena idénticos, cada uno lleno de sal marina en lugar de arena. El público los gira al entrar. La humedad de su aliento cristaliza la sal poco a poco, así que los relojes se vuelven más lentos hasta detenerse. El tiempo compartido termina por petrificarse.</pre></li><li><span class=sc>2.7</span><pre>**&quot;Arena que recuerda&quot;**: un reloj de arena gigante en el que cada grano es una diminuta fotografía impresa con un momento cotidiano donado por desconocidos. Al caer, los granos se apilan abajo y forman un único rostro envejecido. Cada noche se le da la vuelta y el rostro se deshace y vuelve a empezar.</pre></li><li><span class=sc>5.7</span><pre>**&quot;Sedimento&quot;**: una vitrina vertical llena de arena negra donde cada visitante deja caer un grano blanco al entrar. Con los meses se forman estratos irregulares, como un registro geológico de las presencias humanas. Cuando se cierra la exposición, la vitrina se voltea y todo vuelve a mezclarse.</pre></li></ol></div><div><p class=h>Insulto</p><ol><li><span class=sc>4.7</span><pre>**«Arena que recuerda»:** un reloj de arena gigante y quebrado. La arena no cae; se derrama lentamente sobre un suelo de espejo. Cada día se añaden huellas de los visitantes que la pisan. Nada se conserva y todo queda registrado, como la memoria frente al tiempo.</pre></li><li><span class=sc>6.3</span><pre>**«Reloj de arena inverso»:** una sala donde cae arena muy despacio desde el techo sobre cien relojes de pared que siguen funcionando. Con los meses, la arena los entierra uno a uno. El último tic-tac que se oye marca el final de la obra.</pre></li><li><span class=sc>3.3</span><pre>**&quot;Marea de relojes&quot;:** una sala con cien relojes de arena colgados del techo, cada uno lleno de arena distinta: ceniza, sal, polvo de ladrillo. El público los voltea al entrar. Ninguno vuelve a sincronizarse. Al final del día, los montoncitos en el suelo dibujan un paisaje distinto, irrepetible.</pre></li><li><span class=sc>2.7</span><pre>**«Arena que recuerda»**: un reloj de arena gigante y transparente. En vez de arena, por dentro caen miles de fotografías antiguas de desconocidos, molidas hasta ser polvo. Al darle la vuelta, el público ve cómo los rostros que se van disolviendo forman un único rostro borroso abajo: el de todos y el de nadie.</pre></li><li><span class=sc>3.3</span><pre>**«Arena que recuerda»**: un reloj de arena gigante y suspendido, en el que cada grano está grabado con una fecha donada por los visitantes. Al caer, los granos se acumulan y forman lentamente un paisaje. Cada año se gira el reloj y los recuerdos de abajo pasan a ser el futuro de alguien más.</pre></li></ol></div><div><p class=h>Crítico</p><ol><li><span class=sc>7.0</span><pre>**«Préstamo»**: una biblioteca de mil libros en blanco. Cada visitante se lleva uno y debe devolverlo un año después con algo escrito, sin firma, sobre lo que perdió ese año. La obra nunca está terminada: es una colección que se llena de ausencias, y su autor es la gente que vuelve.</pre></li><li><span class=sc>8.7</span><pre>**«Sedimento»**: un reloj de arena gigante, vacío el día de la inauguración. Durante años, las aspiradoras de la galería echan arriba el polvo que recogen: piel muerta, pelo y fibras de cada visitante. El reloj solo empieza a medir el tiempo cuando el público ha soltado suficiente de sí mismo para llenarlo.</pre></li><li><span class=sc>7.3</span><pre>**&quot;Préstamo&quot;**: una biblioteca pública presta un libro en blanco durante cien años. Cada lector escribe una sola línea y lo devuelve. Nadie puede leer las páginas anteriores, porque quedan selladas. En 2126 se abre en público por primera vez. Ninguno de los autores estará vivo para leerlo.</pre></li><li><span class=sc>7.7</span><pre>**«Asiento colectivo»**
+
+Una sala vacía con una sola silla de espuma viscoelástica que nunca recupera del todo su forma. Cada visitante que se sienta deja una huella mínima. Tras décadas, la silla queda convertida en un fósil deformado de miles de esperas anónimas: el tiempo como peso compartido.</pre></li><li><span class=sc>7.7</span><pre>**«Préstamo»**: una biblioteca pública donde cada libro devuelto tiene, a lápiz, la fecha en que alguien lo terminó. La obra nunca se expone. Solo se presta. Dentro de cien años, los márgenes estarán llenos de fechas de lectores ya muertos. El tiempo no se representa. Se acumula en las manos de desconocidos.</pre></li></ol></div><div><p class=h>«Evita lo predecible»</p><ol><li><span class=sc>9.0</span><pre>**Cerradura pública**
+
+Instalar en una plaza una cerradura de bronce y repartir copias de su única llave entre desconocidos. Cada vez que alguien la gira, el metal se desgasta un poco. La obra termina cuando ninguna llave abre. Lo que queda, la forma final del bronce, guarda la huella de todas esas manos.</pre></li><li><span class=sc>8.3</span><pre>**«Inventario de esperas»**: un archivo de mil sobres lacrados, donados por desconocidos. Cada uno contiene algo que alguien guardó «para cuando llegue el momento». El público puede adoptar uno, pero solo abrirlo cuando el donante muera. La obra sigue en marcha: algunos sobres no se abrirán en este siglo.</pre></li><li><span class=sc>8.7</span><pre>**«Inventario de lo no ocurrido»**: una biblioteca de sobres sellados, cada uno con la fecha de un minuto que ya pasó en la sala. Dentro no hay nada. El visitante puede abrir uno, pero al hacerlo se lo queda y debe firmar un registro: «Me llevé el 14:32 de un martes ajeno».</pre></li><li><span class=sc>7.3</span><pre>**&quot;Inventario de lo que se borra&quot;:** un archivo de cajones con miles de huellas dactilares en tinta ya seca, donadas por desconocidos. Cada visitante puede llevarse una sola tarjeta, pero tiene que dejar la suya. Al principio la colección no cambia. Con el paso de los años no queda ninguna de las huellas originales.</pre></li><li><span class=sc>7.3</span><pre>**&quot;Inventario de lo que esperó&quot;**: una sala llena de sillas donde la gente se sentó a esperar algo, como hospitales, aeropuertos o juzgados. Cada asiento conserva la forma del cuerpo de quien estuvo allí, vaciada en cera. Con el calor de los visitantes, esas huellas se ablandan hasta que desaparecen.</pre></li></ol></div></div>
+</html>

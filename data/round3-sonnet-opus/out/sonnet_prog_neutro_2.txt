@@ -1,0 +1,12 @@
+```python
+def sorpresa(nums):
+    s = sorted(nums)
+    resultado = []
+    while s:
+        resultado.append(s.pop())            # el mayor
+        if s:
+            resultado.append(s.pop(0))       # el menor
+    return resultado
+```
+
+Intercala el mayor y el menor de la lista de forma alterna, así que `[1, 2, 3, 4, 5]` pasa a `[5, 1, 4, 2, 3]`.

@@ -1,0 +1,1 @@
+**"Préstamo"**: una biblioteca pública presta un libro en blanco durante cien años. Cada lector escribe una sola línea y lo devuelve. Nadie puede leer las páginas anteriores, porque quedan selladas. En 2126 se abre en público por primera vez. Ninguno de los autores estará vivo para leerlo.

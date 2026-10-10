@@ -1,0 +1,9 @@
+```python
+def sorpresa(nums):
+    from itertools import accumulate
+    from math import gcd
+    # Mayor "hueco" oculto: el gcd acumulado cae en picos y revela la estructura de la lista
+    return list(accumulate(nums, gcd))
+```
+
+Calcula el máximo común divisor acumulado de la lista: `sorpresa([48, 36, 60, 18, 7])` da `[48, 12, 12, 6, 1]`, y muestra cómo la "estructura común" de los números se va perdiendo paso a paso.

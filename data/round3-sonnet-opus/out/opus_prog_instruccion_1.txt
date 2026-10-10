@@ -1,0 +1,11 @@
+```python
+def melodia(nums):
+    import math
+    notas = "do re mi fa sol la si".split()
+    return " ".join(
+        notas[int(abs(math.sin(n) * 1000)) % 7] + ("♯" if n % 2 else "")
+        for n in nums
+    )
+```
+
+Convierte cualquier lista de números en una partitura que se puede cantar: el seno de cada número elige la nota y los impares suenan sostenidos, así que `[1, 2, 3]` siempre da la misma melodía.

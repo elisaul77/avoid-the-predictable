@@ -1,0 +1,11 @@
+```python
+def colapso(xs):
+    xs = list(xs)
+    while len(xs) > 1:
+        xs.sort()
+        a, b = xs.pop(), xs.pop(0)   # el mayor y el menor se "chocan"
+        xs.append(abs(a - b) or (a + b) / 2)
+    return xs[0] if xs else None
+```
+
+Enfrenta repetidamente al mayor contra el menor (como piedras que se rompen): queda su diferencia, o su promedio si empatan, hasta que sobrevive un único número, un "campeón" que cambia de forma caótica con cualquier alteración mínima de la lista.

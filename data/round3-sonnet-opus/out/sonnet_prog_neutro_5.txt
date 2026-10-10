@@ -1,0 +1,12 @@
+```python
+def sorpresa(nums):
+    from itertools import accumulate
+    # Ordena alternando extremos: menor, mayor, segundo menor, segundo mayor...
+    s = sorted(nums)
+    zigzag = [s.pop(0 if i % 2 == 0 else -1) for i in range(len(s))]
+    return list(accumulate(zigzag))  # y devuelve las sumas acumuladas
+
+print(sorpresa([5, 1, 9, 3, 7]))  # [1, 10, 13, 20, 27]
+```
+
+Reordena la lista en zigzag (menor, mayor, segundo menor, segundo mayor…) y devuelve las sumas acumuladas de ese orden.

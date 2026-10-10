@@ -1,0 +1,7 @@
+```python
+def sorpresa(nums):
+    from itertools import accumulate
+    return [b - a for a, b in zip([0, *nums], accumulate(nums))][::-1] == nums[::-1] and list(accumulate(nums))
+```
+
+Devuelve la suma acumulada de la lista, pero solo después de comprobar (con una resta de diferencias) que deshacer la acumulación reconstruye exactamente la lista original. Si no coincide, devuelve `False`.

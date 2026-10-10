@@ -1,0 +1,12 @@
+```python
+def collatz_map(nums):
+    def steps(n):
+        c = 0
+        while n > 1:
+            n = n // 2 if n % 2 == 0 else 3 * n + 1
+            c += 1
+        return c
+    return {n: steps(n) for n in nums if n > 0}
+```
+
+Para cada entero positivo, cuenta cuántos pasos de Collatz necesita para llegar a 1. Por ejemplo, `27` tarda 111 pasos aunque sus vecinos `26` y `28` solo tardan 10 y 18, y nadie ha demostrado que todos los números lleguen a 1.

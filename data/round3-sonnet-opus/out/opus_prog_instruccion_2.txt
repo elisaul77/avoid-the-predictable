@@ -1,0 +1,14 @@
+```python
+from fractions import Fraction
+
+def fraccion_continua(nums):
+    r = Fraction(nums[-1])
+    for n in reversed(nums[:-1]):
+        r = n + 1 / r
+    return r
+
+print(fraccion_continua([3, 7, 15, 1]))   # 355/113 ≈ 3.14159292 (π)
+print(fraccion_continua([1] * 20))        # 10946/6765 ≈ φ (razón áurea)
+```
+
+Toma la lista como los coeficientes de una fracción continua y la convierte en un número exacto: `[3, 7, 15, 1]` da 355/113, que coincide con π en sus primeros 7 dígitos, y una lista de unos da un cociente de números de Fibonacci consecutivos, que se acerca a la razón áurea.

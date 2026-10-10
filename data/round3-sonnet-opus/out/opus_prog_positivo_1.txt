@@ -1,0 +1,13 @@
+```python
+def ducci(nums):
+    pasos = [list(nums)]
+    while any(pasos[-1]) and len(pasos) < 1000:
+        a = pasos[-1]
+        pasos.append([abs(a[i] - a[(i + 1) % len(a)]) for i in range(len(a))])
+    return pasos
+
+for fila in ducci([17, 3, 92, 41]):
+    print(fila)
+```
+
+La función resta cada número a su vecino de forma circular y repite el proceso. Si la lista tiene un número de enteros que es potencia de 2 (4, 8, 16…), siempre termina en ceros, sin importar cuáles sean los números (se llama secuencia de Ducci).

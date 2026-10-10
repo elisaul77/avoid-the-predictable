@@ -1,0 +1,11 @@
+```python
+def sorprende(nums):
+    nums = sorted(set(nums))
+    if not nums:
+        return []
+    ini, fin = nums[0], nums[-1]
+    # Devuelve los números que faltan para completar el rango continuo
+    return [n for n in range(ini, fin + 1) if n not in set(nums)]
+```
+
+Encuentra los "huecos" de una lista: `sorprende([1, 2, 5, 9])` devuelve `[3, 4, 6, 7, 8]`, los números que faltan para que la secuencia sea continua.

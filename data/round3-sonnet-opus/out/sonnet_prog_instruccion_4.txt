@@ -1,0 +1,12 @@
+```python
+def eco(xs):
+    # Cada número "recuerda" a los anteriores: su peso decae a la mitad por paso.
+    out, mem = [], 0
+    for x in xs:
+        mem = mem / 2 + x
+        out.append(mem)
+    # Devuelve la lista invertida en el tiempo: lo que "sonaría" si el eco se oyera al revés.
+    return out[::-1]
+```
+
+Convierte la lista en un "eco" (cada valor acumula la mitad del anterior, como un filtro de reverberación) y lo devuelve al revés, así `eco([1, 0, 0, 0])` da `[0.125, 0.25, 0.5, 1.0]`: un sonido que crece hasta golpear.

@@ -1,0 +1,12 @@
+```python
+def espiral_ulam(nums):
+    es_primo = lambda n: n > 1 and all(n % d for d in range(2, int(n**0.5) + 1))
+    filas = []
+    for i in range(0, len(nums), w := int(len(nums)**0.5) or 1):
+        filas.append(''.join('█' if es_primo(n) else '·' for n in nums[i:i+w]))
+    return '\n'.join(filas)
+
+print(espiral_ulam(range(1, 401)))
+```
+
+La función acomoda la lista en una cuadrícula y marca los números primos con █. Con `range(1, 401)` cada fila tiene 20 números, así que todos los primos salvo el 2 y el 5 caen en solo 8 columnas. Eso pasa porque mod 20 los primos solo pueden terminar en 1, 3, 7, 9, 11, 13, 17 o 19, y el resultado son rayas verticales. El nombre engaña un poco: no es una espiral de Ulam de verdad, solo una cuadrícula de filas.

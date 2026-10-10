@@ -1,0 +1,13 @@
+```python
+def collatz_hasta_uno(nums):
+    out = {}
+    for n in nums:
+        pasos, x = 0, n
+        while x != 1:
+            x = x // 2 if x % 2 == 0 else 3 * x + 1
+            pasos += 1
+        out[n] = pasos
+    return out
+```
+
+Aplica la conjetura de Collatz a cada número entero positivo y cuenta los pasos hasta llegar a 1. Por ejemplo, `collatz_hasta_uno([6, 7, 27])` → `{6: 8, 7: 16, 27: 111}`: el 27, siendo tan pequeño, sube hasta 9232 antes de bajar.

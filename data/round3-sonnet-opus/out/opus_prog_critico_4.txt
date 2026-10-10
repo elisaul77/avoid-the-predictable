@@ -1,0 +1,12 @@
+```python
+def siguiente(xs):
+    if len(set(xs)) <= 1:
+        return xs[0] if xs else 0
+    return xs[-1] + siguiente([b - a for a, b in zip(xs, xs[1:])])
+
+print(siguiente([1, 4, 9, 16]))      # 25
+print(siguiente([1, 8, 27, 64]))     # 125
+print(siguiente([2, 3, 5, 8, 12]))   # 17
+```
+
+Predice el siguiente término de cualquier secuencia polinómica sin conocer la fórmula. Usa el método de diferencias finitas de Newton: resta términos vecinos hasta que el resultado queda constante y luego reconstruye el número que falta.

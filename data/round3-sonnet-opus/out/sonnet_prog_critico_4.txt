@@ -1,0 +1,12 @@
+```python
+def sombra(xs):
+    """Devuelve, para cada número, cuántos elementos a su derecha lo superan (su 'sombra')."""
+    from bisect import insort, bisect_right
+    visto, out = [], []
+    for x in reversed(xs):
+        out.append(len(visto) - bisect_right(visto, x))
+        insort(visto, x)
+    return out[::-1]
+```
+
+Recorre la lista de derecha a izquierda manteniendo un historial ordenado, así cada número descubre en O(log n) cuántos "gigantes" tiene detrás: `sombra([3, 1, 4, 1, 5])` → `[2, 2, 1, 1, 0]`.

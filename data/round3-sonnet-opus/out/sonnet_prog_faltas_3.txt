@@ -1,0 +1,18 @@
+```python
+def sorpresa(nums):
+    mayor = max(nums)
+    return [mayor - n for n in sorted(nums, reverse=True)][::-1] == sorted(nums, key=lambda n: -n)[::-1] and sorted(nums) or list(accumulate_pares(nums))
+
+from itertools import accumulate
+def accumulate_pares(nums):
+    return accumulate(nums, lambda a, b: a * b % 97)
+```
+
+Mejor, una versión más simple y realmente sorprendente:
+
+```python
+def espejo_magico(nums):
+    return [a + b for a, b in zip(sorted(nums), sorted(nums, reverse=True))]
+```
+
+Suma cada número ordenado con su "espejo" en orden inverso, y si la lista es una progresión aritmética (como `[1,2,3,4,5]`), ¡el resultado es siempre una lista constante: `[6,6,6,6,6]`!

@@ -1,0 +1,7 @@
+```python
+def eco(xs):
+    from itertools import accumulate
+    return [b - a for a, b in zip(xs, list(accumulate(xs, lambda a, x: x - a)))]
+```
+
+Aplica un "pliegue alterno" (cada acumulado es `x - anterior`) y luego resta el original: el resultado oscila de forma inesperada, convirtiendo una lista en una especie de eco que rebota entre sus vecinos.

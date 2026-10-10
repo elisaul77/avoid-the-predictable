@@ -1,0 +1,15 @@
+```python
+def paseo_de_granizo(nums):
+    """Aplica Collatz a cada número y devuelve cuántos pasos tarda en llegar a 1."""
+    def pasos(n):
+        c = 0
+        while n > 1:
+            n = n // 2 if n % 2 == 0 else 3 * n + 1
+            c += 1
+        return c
+    return {n: pasos(n) for n in nums}
+
+print(paseo_de_granizo([6, 7, 27, 97]))  # {6: 8, 7: 16, 27: 111, 97: 118}
+```
+
+Cada número emprende el "viaje del granizo" de Collatz (par → mitad, impar → 3n+1) y la función te dice cuántos pasos tarda en caer a 1; sorprende que el 27 necesite 111 pasos, mientras que el 6 solo necesita 8.

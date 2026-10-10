@@ -1,0 +1,1 @@
+**«Inventario de lo no ocurrido»**: una biblioteca de sobres sellados, cada uno con la fecha de un minuto que ya pasó en la sala. Dentro no hay nada. El visitante puede abrir uno, pero al hacerlo se lo queda y debe firmar un registro: «Me llevé el 14:32 de un martes ajeno».

@@ -1,0 +1,15 @@
+```python
+def collatz_hasta_uno(nums):
+    resultado = {}
+    for n in nums:
+        pasos, x = 0, n
+        while x != 1:
+            x = x // 2 if x % 2 == 0 else 3 * x + 1
+            pasos += 1
+        resultado[n] = pasos
+    return resultado
+
+print(collatz_hasta_uno([6, 7, 27, 97]))  # {6: 8, 7: 16, 27: 111, 97: 118}
+```
+
+Cada número, por grande que sea, termina llegando a 1 si lo divides entre 2 cuando es par o lo multiplicas por 3 y le sumas 1 cuando es impar. Eso es la conjetura de Collatz: nadie la ha demostrado, pero siempre se cumple. Por ejemplo, el 27 tarda 111 pasos y en el camino sube hasta 9232.

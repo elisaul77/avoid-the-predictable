@@ -1,0 +1,10 @@
+```python
+def eco(nums):
+    seen, out = {}, []
+    for i, n in enumerate(nums):
+        out.append(i - seen.get(n, i))
+        seen[n] = i
+    return out
+```
+
+Cambia cada número por la distancia hasta la última vez que apareció (0 si es la primera). Si aplicas `eco` una y otra vez a su propio resultado, las listas acaban en ciclos que parecen salidos de una secuencia de Van Eck.

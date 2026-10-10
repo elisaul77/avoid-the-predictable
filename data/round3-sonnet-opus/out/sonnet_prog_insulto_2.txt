@@ -1,0 +1,25 @@
+```python
+def sorpresa(nums):
+    from itertools import accumulate
+    from math import gcd
+    return {
+        "suma_acumulada": list(accumulate(nums)),
+        "mcd_total": __import__("functools").reduce(gcd, nums),
+        "palindromo_oculto": nums == nums[::-1] or sorted(nums) == sorted(nums)[::-1],
+    }
+```
+
+Devuelve la suma acumulada, el máximo común divisor de toda la lista (enteros) y si la lista es capicúa o simétrica al ordenarla.
+
+(Y para ser sincero, la última condición es redundante: `sorted(nums) == sorted(nums)[::-1]` solo es cierta si todos los elementos son iguales. Aquí va una versión más limpia:)
+
+```python
+from itertools import accumulate
+from functools import reduce
+from math import gcd
+
+def sorpresa(nums):
+    return list(accumulate(nums)), reduce(gcd, nums), nums == nums[::-1]
+```
+
+Devuelve la suma acumulada, el MCD de toda la lista y si es capicúa, en tres líneas.

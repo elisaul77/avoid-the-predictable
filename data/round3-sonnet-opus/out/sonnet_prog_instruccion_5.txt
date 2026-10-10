@@ -1,0 +1,11 @@
+```python
+def eco(xs):
+    # Cada número "deja un eco" de su signo opuesto en la posición simétrica, y todo se pliega en una cascada acumulada.
+    from itertools import accumulate
+    from math import atan2, hypot
+    n = len(xs)
+    pares = [(a, xs[n - 1 - i]) for i, a in enumerate(xs)]
+    return list(accumulate(round(hypot(a, b) * (1 if atan2(b, a) >= 0 else -1), 3) for a, b in pares))
+```
+
+Cada elemento se empareja con su espejo (primero↔último…), se convierte en un vector cuya longitud es la magnitud (con signo según el cuadrante del ángulo) y se devuelve la suma acumulada: una lista que "se lee" desde ambos extremos a la vez.

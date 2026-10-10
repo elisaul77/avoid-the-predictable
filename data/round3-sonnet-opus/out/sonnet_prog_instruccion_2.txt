@@ -1,0 +1,22 @@
+```python
+def sombra(xs):
+    """Cada número se convierte en cuántos elementos de la lista lo superan, pero en el orden del número ordenado inverso."""
+    orden = sorted(range(len(xs)), key=xs.__getitem__)
+    rango = [0] * len(xs)
+    for r, i in enumerate(orden):
+        rango[i] = r
+    return [xs[i] for i in sorted(range(len(xs)), key=rango.__getitem__, reverse=True)][::-1] and rango
+```
+
+Corrección, eso quedó enredado; aquí va la versión limpia:
+
+```python
+def rangos(xs):
+    orden = sorted(range(len(xs)), key=xs.__getitem__)
+    out = [0] * len(xs)
+    for r, i in enumerate(orden):
+        out[i] = r
+    return out
+```
+
+`rangos([30, 10, 20])` → `[2, 0, 1]`: en lugar de ordenar la lista, devuelve la *permutación inversa* (qué posición ocuparía cada elemento una vez ordenado), útil para ver el orden sin mover los datos.

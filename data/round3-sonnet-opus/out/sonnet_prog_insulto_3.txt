@@ -1,0 +1,11 @@
+```python
+def sorpresa(nums):
+    from itertools import accumulate
+    n = len(nums)
+    # Ordena en zigzag: menor, mayor, segundo menor, segundo mayor...
+    s = sorted(nums)
+    zig = [s[i // 2] if i % 2 == 0 else s[-(i // 2) - 1] for i in range(n)]
+    return list(accumulate(zig))  # y devuelve las sumas acumuladas del zigzag
+```
+
+Intercala los números del menor al mayor en zigzag (mínimo, máximo, segundo mínimo, segundo máximo…) y devuelve la suma acumulada, lo que produce una secuencia que oscila y converge hacia el total.

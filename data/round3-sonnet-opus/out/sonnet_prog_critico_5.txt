@@ -1,0 +1,11 @@
+```python
+def sombra(nums):
+    """Cada número 've' cuántos mayores tiene a su derecha: el perfil oculto del orden."""
+    resultado, vistos = [], []
+    for x in reversed(nums):
+        resultado.append(sum(v > x for v in vistos))
+        vistos.append(x)
+    return resultado[::-1]
+```
+
+`sombra([3, 1, 4, 1, 5])` devuelve `[2, 2, 1, 1, 0]`: para cada elemento cuenta cuántos números mayores que él aparecen después, un vector de inversiones inverso que es una huella única de la permutación, de la que se puede reconstruir el orden original.

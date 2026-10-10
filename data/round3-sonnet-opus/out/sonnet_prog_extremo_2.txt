@@ -1,0 +1,11 @@
+```python
+def sorpresa(nums):
+    pares = sorted(nums)[::2]; impares = sorted(nums)[1::2]
+    return {"suma_alterna": sum(n * (-1) ** i for i, n in enumerate(sorted(nums))),
+            "mediana": (lambda s: (s[len(s)//2] + s[~(len(s)//2)]) / 2)(sorted(nums)),
+            "pares_idx": pares, "impares_idx": impares, "zip_magico": list(zip(pares, impares[::-1]))}
+
+print(sorpresa([5, 3, 9, 1, 7, 2]))
+```
+
+Ordena la lista y la sorprende con la suma alterna, la mediana y emparejando los números menores con los mayores (extremos opuestos).

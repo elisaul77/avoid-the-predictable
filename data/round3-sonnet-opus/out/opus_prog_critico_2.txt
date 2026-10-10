@@ -1,0 +1,12 @@
+```python
+def siguiente(xs):
+    if len(set(xs)) <= 1:
+        return xs[0] if xs else 0
+    return xs[-1] + siguiente([b - a for a, b in zip(xs, xs[1:])])
+
+print(siguiente([1, 4, 9, 16]))          # 25
+print(siguiente([1, 8, 27, 64]))         # 125
+print(siguiente([2, 6, 15, 31, 56]))     # 92
+```
+
+Para predecir el siguiente término de cualquier secuencia generada por un polinomio, la función calcula de forma recursiva las diferencias entre términos consecutivos hasta que quedan todas iguales. Así lo resuelve sin conocer la fórmula, el grado ni los coeficientes; es el método de diferencias finitas de Newton.

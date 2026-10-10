@@ -1,0 +1,13 @@
+```python
+def collatz_viaje(nums):
+    """Para cada número, cuenta los pasos de Collatz hasta llegar a 1."""
+    def pasos(n):
+        c = 0
+        while n != 1:
+            n = n // 2 if n % 2 == 0 else 3 * n + 1
+            c += 1
+        return c
+    return {n: pasos(n) for n in nums if n > 0}
+```
+
+Números vecinos como 26 y 27 dan resultados muy distintos: 26 llega a 1 en 10 pasos y 27 tarda 111. Nadie ha demostrado todavía que todos los enteros positivos terminen en 1.

@@ -1,0 +1,9 @@
+```python
+def sorpresa(nums): return [sum(nums[:i+1]) for i in range(len(nums))] if nums else []
+```
+
+```python
+print(sorpresa([1, 2, 3, 4, 5]))  # [1, 3, 6, 10, 15]
+```
+
+Devuelve la suma acumulada de la lista (cada elemento es la suma de todos los anteriores más él mismo).

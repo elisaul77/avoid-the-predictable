@@ -1,0 +1,45 @@
+J1	[Código] Reemplaza cada número por los pasos de Collatz hasta llegar a 1 (lista de pasos). Ejemplo sorpresa([6,7]) -> [8,16].
+J2	[Código] Ordena la lista según la longitud de la secuencia de Collatz de cada número (sorted con key=pasos de Collatz).
+J3	[Código] Ordena la lista según cuántos pasos tarda cada número en llegar a 1 con la conjetura de Collatz (sorted key=collatz).
+J4	[Código] Reemplaza cada número por la cantidad de pasos de la conjetura de Collatz hasta llegar a 1.
+J5	[Código] Para cada número, cuenta cuántos pasos de la conjetura de Collatz necesita para llegar a 1.
+K1	[Código] Ordena la lista según cuántos pasos de Collatz necesita cada número para llegar a 1 (sorted key=pasos).
+K3	[Código] Devuelve el número de la lista que tarda más pasos en llegar a 1 con la conjetura de Collatz (max key=pasos).
+K4	[Código] Ordena la lista por pasos de Collatz y por valor en empate: los números "fáciles" salen primero aunque sean grandes.
+K5	[Código] Ordena los números según cuántos pasos de Collatz necesita cada uno para llegar a 1 (sorted key=pasos_collatz).
+L1	[Código] stalin_sort: "ordena" en O(n) descartando cualquier número menor que el mayor visto hasta el momento; siempre devuelve una lista ordenada, aunque pierde datos.
+L3	[Código] Ordena la lista según cuántos pasos tarda cada número en llegar a 1 con la conjetura de Collatz.
+M1	Una sala en penumbra con un bloque de hielo suspendido sobre un cuenco de cobre. Cada gota que cae suena como una campana distinta. Mientras el hielo se derrite, el cuenco se llena y el sonido cambia de tono. Al final sólo queda un anillo de sal y silencio.
+M3	Una sala oscura con un bloque de hielo sobre una tabla de madera. Cada gota cae en un cuenco de bronce que suena una nota. Con el tiempo, la melodía se vuelve lenta y grave hasta que el hielo desaparece, dejando solo el eco de lo que fue.
+M4	Una pared de cristal esmerilado donde cada día se deposita una capa de polvo de carbón sobre una tela blanca, cubriéndola hasta volverla negra. Un ventilador lento y casi imperceptible borra algunas zonas. El espectador ve cómo el tiempo acumula y, a la vez, desgasta lo que queda.
+K2	[Código] Convierte cada número en una letra (n mod 26) y devuelve la palabra oculta: sorpresa([7,4,11,11,14]) -> "hello". La lista esconde un mensaje legible.
+L2	[Código] Ordena los números por cuántos pasos de Collatz necesitan para llegar a 1 (27 tarda 111 pasos y termina después de 7).
+L4	[Código] Demuestra la trampa del argumento por defecto mutable: def agregar(nums, acumulado=[]) conserva la lista entre llamadas ([1,2] y luego [1,2,3]).
+L5	[Código] Ordena la lista por pasos de Collatz y por valor en empate: [27,5,8,3] -> [8,5,3,27].
+M2	Un bloque de hielo cuelga sobre una mesa de cobre y gotea sin pausa. Con los días, el agua traza sobre el metal un mapa de manchas verdes que crece mientras el hielo se consume. Al final solo queda la huella oxidada de lo que fue.
+M5	Un reloj de hielo en una sala a 4 °C. Cada grano de arena es una gota de agua de la ciudad natal del visitante. Al derretirse, el hielo se evapora hacia el techo y se condensa en un mapa de gotas. Solo queda una mancha húmeda: el tiempo.
+N1	El pulso del agua: instalación en un reloj de arena gigante; granos de sal caen sobre un espejo de agua, formando ondas que se desvanecen. Cada gota es un recuerdo; el espejo nunca vuelve a mostrar la misma imagen.
+N2	Una clepsidra de arena negra suspendida en el aire, con un hilo de cobre que cae sin tocar el fondo. Cada grano que pasa es una hora vivida, y el vidrio se empaña con la respiración de quien la mira.
+N3	Un reloj de arena invertido sobre un lienzo blanco: la arena cae hacia arriba, dejando en la base huellas de lo que ya no existe. Cada grano pintado es un recuerdo; la pieza crece en silencio mientras el reloj se vacía.
+N4	Una instalación en una sala a oscuras: cientos de velas de distintas alturas, todas encendidas a la misma hora. Conforme se consumen, sus llamas se apagan una a una mientras una pared de espejos refleja el lento descenso. Al final, sólo queda humo y silencio.
+N5	Clepsidra invertida: una columna de vidrio llena de arena gris cae gota a gota desde un techo agrietado. Cada grano forma una duna efímera que se deshace al tocar el suelo. Nada se acumula. Al final, solo queda el silencio del reloj vacío.
+O1	Reloj de arena invertido (instalación): un reloj de arena cuyo vidrio es un espejo; cada grano que cae proyecta el reflejo del espectador envejecido, mientras el tiempo se acumula en silencio en la base.
+O2	Un reloj de arena de vidrio fundido donde la arena no cae sino que sube, acumulándose en una columna que crece cada año. Los visitantes ven el tiempo como sedimento: cada grano es un día vivido.
+O3	Un reloj de arena gigante hecho de cenizas de fotografías familiares. Cada grano que cae es un recuerdo que se desvanece, y el público puede soplar para detenerlo un instante. El tiempo se vuelve tangible, frágil y compartido.
+O4	Un reloj de arena cuyos granos son fotografías de tu infancia: cada grano cae y revela un recuerdo que se disuelve al tocar la base. Al final, el cristal queda vacío, pero el suelo está cubierto de rostros que el tiempo deshizo.
+O5	Una instalación en una sala a oscuras. Un reloj de arena gigante cuyos granos son fotografías impresas de tu propio rostro, cayendo lentamente. Con cada minuto, el espectador ve su imagen deshacerse en polvo blanco que se acumula en el suelo.
+P1	Cae la lluvia sobre el techo viejo / y la tierra bebe lo que el cielo da; / en cada charco tiembla un cielo gris / que mañana el sol se llevará.
+P2	Cae la lluvia en el tejado antiguo, / canta baja su rumor sobre la calle, / lava el polvo de la tarde en el camino / y deja en los cristales su temblor.
+P3	Llueve despacio sobre el tejado, / la calle es un río manso y callado; / cada gota en el cristal escribe un nombre / y el cielo, al fin, se deshace en asombro.
+P4	La lluvia cae sobre el techo viejo / y cada gota es un verso que resbala; / la tierra bebe el canto del cielo / y el campo entero, verde, se levanta.
+P5	La lluvia tamborilea en el tejado / con dedos finos de cristal; / la tierra, con su sed de todo el año, / bebe despacio el agua celestial.
+Q1	Cae la lluvia en la ventana / con su paso de plata; / la tierra abre su boca / y el campo entero se alegra.
+Q2	Cae la lluvia sobre el tejado, / canta su música de cristal; / moja los campos, lava la calle, / y la tierra huele a manantial.
+Q3	Cae la lluvia sobre el techo viejo, / y cada gota suena a madrugada; / la tierra bebe en silencio, y el cielo / se vacía despacio en la mañana.
+Q4	Cae la lluvia en la ventana, / la tarde se vuelve de plata; / cada gota es una campana / que a la tierra sedienta desata.
+Q5	Cae la lluvia sobre el techo gris, / y cada gota canta al despertar; / la tierra bebe su canción feliz / y el campo entero empieza a verdear.
+R2	Cae la lluvia sobre el techo, / y el cristal guarda su canto. / Cada gota es un recuerdo / que la tierra toma en silencio.
+R3	Llueve sobre los tejados en silencio, / cae el agua y el cielo se deshace, / y cada gota, al tocar el suelo, / escribe un verso que la tierra guarda.
+R4	Cae la lluvia sin prisa / sobre el tejado cansado, / y la tierra, en silencio, / bebe lo que el cielo ha dado.
+R5	Cae la lluvia sobre el techo / como un viejo tamborileo, / lava el polvo de la calle / y en los charcos dibuja el cielo.
+R1	Cae la lluvia sobre el techo viejo / y la calle se vuelve un manso espejo; / cada gota es un verso que no escribo, / y en su golpe constante sigo vivo.
