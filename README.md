@@ -21,6 +21,7 @@ Este repo documenta un experimento para romper esa costumbre. Probamos escribir 
 En una escala ciega de originalidad del 1 al 10, esa frase sumó **+2,0 a Claude Sonnet** y **+2,8 a Claude Opus**. El halago no cambió nada; los insultos y las faltas empeoraron las respuestas.
 
 > 🧪 **Experimento 2 (10-oct-2026):** [¿un subagente con el contexto de la conversación acierta más y gasta menos?](#-experimento-2-fork-o-subagente-fresco) Veredicto: **misma asertividad; más barato solo si la conversación es corta (<~75k tokens)**.
+> 🧭 **Experimento 3 (11-oct-2026):** [¿Conductor en Sonnet, Opus o Sonnet + advisor?](#-experimento-3-conductor-sonnet-opus-o-sonnet--advisor) Veredicto: **Sonnet basta (−39 %); el advisor es lo más caro (+150 %)**.
 
 ---
 
@@ -114,6 +115,25 @@ scripts/judge.sh sonnet prog; scripts/judge.sh opus arte   # etc.
 
 Informe completo: [`reports/fork-vs-fresh.html`](reports/fork-vs-fresh.html) · datos: [`data/fork-vs-fresh/`](data/fork-vs-fresh/) · scripts: [`scripts/fork-vs-fresh/`](scripts/fork-vs-fresh/). Truco: en `claude -p` el tipo `fork` solo existe con `CLAUDE_CODE_FORK_SUBAGENT=1`.
 
+## 🧭 Experimento 3: Conductor Sonnet, Opus o Sonnet + advisor
+
+**Hipótesis:** un Conductor en Sonnet con `/advisor opus` (que consulta a Opus solo en los momentos clave) acierta igual que uno en Opus y gasta menos.
+
+**Cómo:** la misma conversación padre del experimento 2 y una tarea más difícil de varios archivos: un módulo de cupones con vencimiento y arreglar `resumen()` sin tocar `legacy.py`. Hay 19 criterios ocultos y 5 corridas por condición, con la skill `subagent-pool` haciendo de Conductor.
+
+| Conductor | Acierto | Coste medio | Subagentes |
+|---|:-:|:-:|:-:|
+| Opus | 19/19 | $0,54 | 2 siempre |
+| **Sonnet** | 19/19 | **$0,33** | 2 siempre |
+| Sonnet + advisor Opus | 19/19 | $0,81 | 0 a 5 |
+
+**Veredicto:**
+- ❌ **Advisor: refutado.** Fue lo más caro: **+150 %** frente a Sonnet solo (p = 0,008). Cada consulta relee la conversación entera sin caché, y los subagentes también heredan el advisor. Además, el Conductor delegó de forma errática: una vez no lanzó ningún subagente y otra lanzó 5.
+- ✅ **Sonnet de Conductor basta.** Acertó igual que Opus por un **39 % menos** (p = 0,008). Opus queda para decisiones de diseño grandes.
+- ⚠️ Todas las condiciones sacaron 19/19, así que la tarea aún no separa la calidad.
+
+Datos: [`data/conductor-advisor/`](data/conductor-advisor/) · scripts: [`scripts/conductor-advisor/`](scripts/conductor-advisor/).
+
 ## 📁 Estructura
 
 ```
@@ -121,6 +141,7 @@ data/
   round1-haiku/          90 respuestas, claves ciegas, notas de los jueces, estadísticas (ortografía)
   round2-tone-haiku/     60 respuestas, claves ciegas, notas, estadísticas (tono)
   round3-sonnet-opus/    140 respuestas crudas (out/*.txt), claves, 3 jueces, stats.json
+  conductor-advisor/     experimento 3: notas por corrida y resumen.json
   fork-vs-fresh/         experimento 2: proyecto de prueba, filas por corrida, tabla y estadísticas reales
 reports/                 informes HTML (3 rondas de creatividad + fork-vs-fresh.html)
 scripts/                 generador de prompts, ejecutor y juez; scripts/fork-vs-fresh/ = runner, tests ocultos, análisis
