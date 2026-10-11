@@ -20,6 +20,8 @@ Este repo documenta un experimento para romper esa costumbre. Probamos escribir 
 
 En una escala ciega de originalidad del 1 al 10, esa frase sumó **+2,0 a Claude Sonnet** y **+2,8 a Claude Opus**. El halago no cambió nada; los insultos y las faltas empeoraron las respuestas.
 
+> 🧪 **Experimento 2 (10-oct-2026):** [¿un subagente con el contexto de la conversación acierta más y gasta menos?](#-experimento-2-fork-o-subagente-fresco) Veredicto: **misma asertividad; más barato solo si la conversación es corta (<~75k tokens)**.
+
 ---
 
 ## ✨ Hallazgos
@@ -88,6 +90,30 @@ shuf jobs.jsonl | tr '\n' '\0' | xargs -0 -P 8 -I{} scripts/run1.sh {}
 scripts/judge.sh sonnet prog; scripts/judge.sh opus arte   # etc.
 ```
 
+## 🔀 Experimento 2: ¿fork o subagente fresco?
+
+**Hipótesis:** en Claude Code, un subagente que hereda la conversación del padre (*fork*) acierta más y gasta menos tokens que uno que arranca de cero con un encargo escrito.
+
+**Cómo:** 68 delegaciones reales (Claude Code 2.1.296, padre Sonnet). La conversación padre es idéntica en todas (`--resume --fork-session`): investigar un bug + 6 decisiones del usuario (Decimal, redondeo, IVA, errores en español, no tocar `legacy.py`…). Tests ocultos, uno por decisión, miden la asertividad; los transcripts de cada subagente miden el coste; permutación para los p-valores.
+
+| Contexto del padre | Condición | Acierto | Coste subagente |
+|---|---|:-:|:-:|
+| corto (~38k) | fork | 100 % | **$0,074** |
+| corto | fresco Sonnet + encargo | 100 % | $0,150 |
+| corto | fresco Sonnet, encargo ≤ 2 frases | 100 % | $0,135 |
+| corto | fresco Haiku + encargo | 100 % | **$0,062** |
+| largo (~165k) | fork | 100 % | $0,323 |
+| largo | fresco Sonnet + encargo | 100 % | $0,163 |
+| largo | fresco Haiku + encargo | 100 % | **$0,066** |
+
+**Veredicto:**
+- 🎯 **Asertividad: no mejora.** Un buen padre mete las decisiones en el encargo, incluso en 2 frases; heredar la conversación no añadió aciertos.
+- 💸 **Tokens: depende del tamaño de la conversación.** El fork reutiliza la caché del padre y se ahorra el arranque en frío (~28k tokens), pero relee todo el contexto en cada turno. Por debajo de **~75k tokens** cuesta la mitad; con 165k, **el doble** (p = 0,003).
+- 🪶 **El fresco en un modelo barato gana siempre.** El fork hereda el modelo del padre y no puede bajar a Haiku.
+- 📉 En 299 subagentes de sesiones reales, los forks arrancaban con una mediana de 177k de contexto: casi siempre por encima del equilibrio.
+
+Informe completo: [`reports/fork-vs-fresh.html`](reports/fork-vs-fresh.html) · datos: [`data/fork-vs-fresh/`](data/fork-vs-fresh/) · scripts: [`scripts/fork-vs-fresh/`](scripts/fork-vs-fresh/). Truco: en `claude -p` el tipo `fork` solo existe con `CLAUDE_CODE_FORK_SUBAGENT=1`.
+
 ## 📁 Estructura
 
 ```
@@ -95,8 +121,9 @@ data/
   round1-haiku/          90 respuestas, claves ciegas, notas de los jueces, estadísticas (ortografía)
   round2-tone-haiku/     60 respuestas, claves ciegas, notas, estadísticas (tono)
   round3-sonnet-opus/    140 respuestas crudas (out/*.txt), claves, 3 jueces, stats.json
-reports/                 los tres informes HTML: cada respuesta con su nota
-scripts/                 generador de prompts, ejecutor y juez
+  fork-vs-fresh/         experimento 2: proyecto de prueba, filas por corrida, tabla y estadísticas reales
+reports/                 informes HTML (3 rondas de creatividad + fork-vs-fresh.html)
+scripts/                 generador de prompts, ejecutor y juez; scripts/fork-vs-fresh/ = runner, tests ocultos, análisis
 docs/                    imágenes y animaciones de este README
 ```
 
@@ -107,10 +134,11 @@ docs/                    imágenes y animaciones de este README
 - **Código sin ejecutar:** se juzgó la idea, no si funciona.
 - **Idioma:** los prompts fueron en español; en inglés podría comportarse distinto.
 - **Haiku incompleto:** la condición «evita lo predecible» no se corrió en Haiku.
+- **Experimento 2:** una sola tarea con contexto y fácil (efecto techo en asertividad); padre Sonnet; 6-8 corridas por celda.
 
 ## 🔗 Dónde se usa
 
-El hallazgo ya está en producción en [Orquestacion_Agentes_claude](https://github.com/elisaul77/Orquestacion_Agentes_claude), una skill de Conductor + subagentes para Claude Code. Su ronda de ideas divergentes incluye la frase tal cual.
+El hallazgo ya está en producción en [Orquestacion_Agentes_claude](https://github.com/elisaul77/Orquestacion_Agentes_claude), una skill de Conductor + subagentes para Claude Code. Su ronda de ideas divergentes incluye la frase tal cual, y desde la v9.1 decide entre fork y subagente fresco según el tamaño del contexto (experimento 2).
 
 ## 💡 Dónde empezó
 
